@@ -1,0 +1,27 @@
+{
+  "name": "avatar",
+  "version": "0.1.0",
+  "description": "create an avatar",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frncsdrk/avatar.git"
+  },
+  "keywords": [
+    "avatar"
+  ],
+  "author": "frncsdrk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frncsdrk/avatar/issues"
+  },
+  "homepage": "https://github.com/frncsdrk/avatar#readme",
+  "dependencies": {
+    "canvas": "^2.0.0-alpha.11",
+    "mkdirp": "^0.5.1"
+  }
+}
