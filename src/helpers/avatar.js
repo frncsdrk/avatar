@@ -6,7 +6,6 @@ const createAvatar = (conf, cb) => {
     const WIDTH = conf.width || 256;
     const HEIGHT = conf.height || 256;
     const elementWidth = conf.elementWidth || 16;
-    // const elementHeight = conf.element_height || 16;
     const verticallySymmetric = !conf.horizontallySymmetric ? conf.verticallySymmetric || true : false;
     const horizontallySymmetric = conf.horizontallySymmetric || false;
 
@@ -25,21 +24,22 @@ const createAvatar = (conf, cb) => {
         for (let j = 0; j < elementsPerRow; j++) {
             if (Math.random() > 0.5) {
                 if (conf.type === 'circle') {
+                    const radius = elementWidth / 2;
                     ctx.beginPath();
-                    ctx.arc(j * elementWidth + elementWidth / 2, i * elementWidth + elementWidth / 2, elementWidth / 2, 0, 2 * Math.PI);
+                    ctx.arc(j * elementWidth + radius, i * elementWidth + radius, radius, 0, 2 * Math.PI);
                     ctx.fill();
                     conf.stroke && ctx.stroke();
                     if (verticallySymmetric) {
                         // mirror vertically
                         ctx.beginPath();
-                        ctx.arc((((elementsPerRow * 2 - j) - 1) * elementWidth) + elementWidth / 2, i * elementWidth + elementWidth / 2, elementWidth / 2, 0, 2 * Math.PI);
+                        ctx.arc((((elementsPerRow * 2 - j) - 1) * elementWidth) + radius, i * elementWidth + radius, radius, 0, 2 * Math.PI);
                         ctx.fill();
                         conf.stroke && ctx.stroke();
                     }
                     else if (horizontallySymmetric && !verticallySymmetric) {
                         // mirror horizontally
                         ctx.beginPath();
-                        ctx.arc(j * elementWidth + elementWidth / 2, (((elementsPerCol * 2 - i) - 1) * elementWidth) + elementWidth / 2, elementWidth / 2, 0, 2 * Math.PI);
+                        ctx.arc(j * elementWidth + radius, (((elementsPerCol * 2 - i) - 1) * elementWidth) + radius, radius, 0, 2 * Math.PI);
                         ctx.fill();
                         conf.stroke && ctx.stroke();
                     }

@@ -1,7 +1,7 @@
 avatar
 ===
 
-create an avatar
+create a random avatar
 
 ## routes
 
@@ -9,15 +9,16 @@ create an avatar
 
 - POST
   - body
-    - width
-    - height
-    - verticallySymmetric
-    - horizontallySymmetric (will only be used if verticallySymmetric is explicitly turned off)
-    - type (element type, 'square', 'circle')
-    - elementWidth
-    - color
-    - stroke
-    - strokeColor
+    - {integer} width
+    - {integer} height
+    - {boolean} verticallySymmetric
+    - {boolean} horizontallySymmetric (will only be used if verticallySymmetric is explicitly turned off)
+    - {string}  type (element type, 'square' (default), 'circle')
+    - {integer} elementWidth
+    - {string}  color
+    - {string}  bgColor
+    - {boolean} stroke
+    - {string}  strokeColor
 
 ### /status
 
