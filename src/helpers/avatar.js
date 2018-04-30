@@ -1,18 +1,14 @@
 const { createCanvas, loadImage } = require('canvas');
-const canvas = createCanvas(256, 256);
-const ctx = canvas.getContext('2d');
-const mkdirp = require('mkdirp');
-const fs = require('fs');
 
 const createAvatar = (conf, cb) => {
-    const qs = conf.qs;
-    const res = conf.res;
-
+    const canvas = createCanvas(conf.width || 256, conf.height || 256);
+    const ctx = canvas.getContext('2d');
     const WIDTH = conf.width || 256;
     const HEIGHT = conf.height || 256;
-    const squareWidth = conf.element_width || 16;
-    const squareHeight = conf.element_height || 16;
-    const symmetric = conf.symmetric || true;
+    const elementWidth = conf.elementWidth || 16;
+    // const elementHeight = conf.element_height || 16;
+    const verticallySymmetric = !conf.horizontallySymmetric ? conf.verticallySymmetric || true : false;
+    const horizontallySymmetric = conf.horizontallySymmetric || false;
 
     // Write "Awesome!"
     /*
@@ -53,25 +49,53 @@ const createAvatar = (conf, cb) => {
     ctx.stroke();
     */
 
-    ctx.fillStyle = 'blue';
-    const elementsPerRow = !symmetric ? WIDTH / squareWidth : WIDTH / squareWidth / 2;
-    const elementsPerCol = HEIGHT / squareHeight;
+    ctx.fillStyle = conf.color || 'blue';
+    ctx.strokeStyle = conf.strokeColor || 'black';
+    const elementsPerRow = !verticallySymmetric ? WIDTH / elementWidth : WIDTH / elementWidth / 2;
+    const elementsPerCol = horizontallySymmetric && !verticallySymmetric ? HEIGHT / elementWidth / 2 : HEIGHT / elementWidth;
 
     for (let i = 0; i < elementsPerCol; i++) {
         for (let j = 0; j < elementsPerRow; j++) {
             if (Math.random() > 0.5) {
-                ctx.rect(j * squareWidth, i * squareHeight, squareWidth, squareHeight);
-                if (symmetric) {
-                    // mirror vertically
-                    ctx.rect(((elementsPerRow * 2 - j) - 1) * squareWidth, i * squareHeight, squareWidth, squareHeight);
+                if (conf.type === 'circle') {
+                    ctx.beginPath();
+                    ctx.arc(j * elementWidth + elementWidth / 2, i * elementWidth + elementWidth / 2, elementWidth / 2, 0, 2 * Math.PI);
+                    ctx.fill();
+                    conf.stroke && ctx.stroke();
+                    if (verticallySymmetric) {
+                        // mirror vertically
+                        ctx.beginPath();
+                        ctx.arc((((elementsPerRow * 2 - j) - 1) * elementWidth) + elementWidth / 2, i * elementWidth + elementWidth / 2, elementWidth / 2, 0, 2 * Math.PI);
+                        ctx.fill();
+                        conf.stroke && ctx.stroke();
+                    }
+                    else if (horizontallySymmetric && !verticallySymmetric) {
+                        // mirror horizontally
+                        ctx.beginPath();
+                        ctx.arc(j * elementWidth + elementWidth / 2, (((elementsPerCol * 2 - i) - 1) * elementWidth) + elementWidth / 2, elementWidth / 2, 0, 2 * Math.PI);
+                        ctx.fill();
+                        conf.stroke && ctx.stroke();
+                    }
+                }
+                else {
+                    ctx.rect(j * elementWidth, i * elementWidth, elementWidth, elementWidth);
+                    if (verticallySymmetric) {
+                        // mirror vertically
+                        ctx.rect(((elementsPerRow * 2 - j) - 1) * elementWidth, i * elementWidth, elementWidth, elementWidth);
+                    }
+                    else if (horizontallySymmetric && !verticallySymmetric) {
+                        // mirror horizontally
+                        ctx.rect(j * elementWidth, ((elementsPerCol * 2 - i) - 1) * elementWidth, elementWidth, elementWidth);
+                    }
                 }
             }
         }
     }
 
     ctx.fill();
+    conf.stroke && ctx.stroke();
 
-    const buffer = canvas.toBuffer();
+    let buffer = canvas.toBuffer();
 
     cb(null, buffer);
 };
