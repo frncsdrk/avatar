@@ -7,13 +7,17 @@ create an avatar
 
 ### /avatar
 
-- GET
-  - query params
+- POST
+  - body
     - width
     - height
-    - symmetric
+    - verticallySymmetric
+    - horizontallySymmetric (will only be used if verticallySymmetric is explicitly turned off)
     - type (element type, 'square', 'circle')
-    - noe (number of elements per row and column)
+    - elementWidth
+    - color
+    - stroke
+    - strokeColor
 
 ### /status
 
