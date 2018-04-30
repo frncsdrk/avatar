@@ -10,44 +10,11 @@ const createAvatar = (conf, cb) => {
     const verticallySymmetric = !conf.horizontallySymmetric ? conf.verticallySymmetric || true : false;
     const horizontallySymmetric = conf.horizontallySymmetric || false;
 
-    // Write "Awesome!"
-    /*
-    ctx.font = '30px Impact';
-    ctx.rotate(0.1);
-    ctx.fillText('Awesome!', 50, 100);
-
-    // Draw line under text
-    const text = ctx.measureText('Awesome!');
-    ctx.strokeStyle = 'rgba(0,0,0,0.5)';
-    ctx.beginPath();
-    ctx.lineTo(50, 102);
-    ctx.lineTo(50 + text.width, 102);
-    ctx.stroke();
-    */
-
-    // cross with border
-    /*
-    ctx.strokeStyle = 'rgba(0,0,0,0.5)';
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-
-    // cross
-    ctx.moveTo(0, 0);
-    ctx.lineTo(256, 256);
-
-    ctx.moveTo(256, 0);
-    ctx.lineTo(0, 256);
-
-    // outer border
-    ctx.lineWidth = 5;
-    ctx.moveTo(0, 0);
-    ctx.lineTo(256, 0);
-    ctx.lineTo(256, 256);
-    ctx.lineTo(0, 256);
-    ctx.lineTo(0, 0);
-
-    ctx.stroke();
-    */
+    if (conf.bgColor) {
+        ctx.beginPath();
+        ctx.fillStyle = conf.bgColor;
+        ctx.fillRect(0, 0, WIDTH, HEIGHT);
+    }
 
     ctx.fillStyle = conf.color || 'blue';
     ctx.strokeStyle = conf.strokeColor || 'black';
