@@ -4,7 +4,7 @@
   "description": "create an avatar",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,7 +21,10 @@
   },
   "homepage": "https://github.com/frncsdrk/avatar#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "canvas": "^2.0.0-alpha.11",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
     "mkdirp": "^0.5.1"
   }
 }
