@@ -22,4 +22,6 @@ create a random avatar
 
 ### /status
 
-comming soon
+- GET
+  - {number} status
+  - {string} message
