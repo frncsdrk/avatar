@@ -29,3 +29,8 @@ create a random avatar
 - GET
   - {number} status
   - {string} message
+
+## License
+
+[License](https://github.com/frncsdrk/avatar/blob/master/LICENSE)  
+(c) 2018 frncsdrk
