@@ -7,7 +7,7 @@ create a random avatar
 
 ### /avatar
 
-- POST /
+- POST / - get an avatar with the possiblity to customize it to some degree
   - body
     - {integer} width
     - {integer} height
@@ -15,12 +15,12 @@ create a random avatar
     - {boolean} horizontallySymmetric (will only be used if verticallySymmetric is explicitly turned off)
     - {string}  type (element type, 'square' (default), 'circle')
     - {integer} elementWidth
-    - {string}  color
-    - {string}  bgColor
-    - {boolean} stroke
+    - {string}  color - color of elements
+    - {string}  bgColor - background color
+    - {boolean} stroke - add stroke to outline elements
     - {string}  strokeColor
 
-- GET /random
+- GET /random - get an avatar without the need to specify any parameters
   - image
 
 
