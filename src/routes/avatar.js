@@ -18,5 +18,24 @@ router.post('/', (req, res, next) => {
         }
     );
 });
+router.get('/random', (req, res, next) => {
+    createAvatar(
+        {
+            width: 256,
+            height: 256,
+            elementWidth: 16,
+            color: '#'+(Math.random()*0xFFFFFF<<0).toString(16),
+            type: Math.round(Math.random()) ? 'circle' : ''
+        },
+        (err, data) => {
+            respond({
+                err,
+                res,
+                data,
+                contentType: 'image/png'
+            })
+        }
+    )
+});
 
 module.exports = router;

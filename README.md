@@ -7,7 +7,7 @@ create a random avatar
 
 ### /avatar
 
-- POST
+- POST /
   - body
     - {integer} width
     - {integer} height
@@ -19,6 +19,10 @@ create a random avatar
     - {string}  bgColor
     - {boolean} stroke
     - {string}  strokeColor
+
+- GET /random
+  - image
+
 
 ### /status
 
