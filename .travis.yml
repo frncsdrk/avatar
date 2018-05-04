@@ -2,6 +2,15 @@ language: node_js
 node_js:
   - node
 cache: npm
+addons:
+  apt:
+    packages:
+      - libcairo2-dev
+      - libjpeg-dev
+      - libpango1.0-dev
+      - libgif-dev
+      - build-essential
+      - g++
 script: npm run deploy
 after_script: npm run alias
 env:
