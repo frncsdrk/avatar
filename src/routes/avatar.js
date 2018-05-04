@@ -5,9 +5,9 @@ const createAvatar = require('./../helpers/avatar').createAvatar;
 
 const router = express.Router();
 
-router.post('/', (req, res, next) => {
+router.get('/', (req, res, next) => {
     createAvatar(
-        req.body,
+        req.query,
         (err, data) => {
             respond({
                 err,

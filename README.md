@@ -10,8 +10,8 @@ Inspired by github default avatars
 
 ### /avatar
 
-- POST / - get an avatar with the possiblity to customize it to some degree
-  - body
+- GET / - get an avatar with the possiblity to customize it to some degree
+  - query
     - {integer} width
     - {integer} height
     - {boolean} verticallySymmetric
