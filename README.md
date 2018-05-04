@@ -1,7 +1,8 @@
 avatar
 ===
 
-create a random avatar
+create a random avatar  
+Inspired by github default avatars
 
 ## routes
 
