@@ -415,6 +415,10 @@ nopt@^4.0.1:
     abbrev "1"
     osenv "^0.1.4"
 
+now@^11.1.7:
+  version "11.1.7"
+  resolved "https://registry.yarnpkg.com/now/-/now-11.1.7.tgz#161bbf0c6ed090fb5e66ec8b1650926e09a41896"
+
 npm-bundled@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/npm-bundled/-/npm-bundled-1.0.3.tgz#7e71703d973af3370a9591bafe3a63aca0be2308"
