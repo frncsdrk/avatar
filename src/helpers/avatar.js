@@ -1,7 +1,7 @@
-const { createCanvas, loadImage } = require('canvas');
+const Canvas = require('canvas');
 
 const createAvatar = (conf, cb) => {
-    const canvas = createCanvas(conf.width || 256, conf.height || 256);
+    const canvas = new Canvas(conf.width || 256, conf.height || 256);
     const ctx = canvas.getContext('2d');
     const WIDTH = conf.width || 256;
     const HEIGHT = conf.height || 256;
