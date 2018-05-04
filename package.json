@@ -24,7 +24,7 @@
   "homepage": "https://github.com/frncsdrk/avatar#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "canvas": "^2.0.0-alpha.11",
+    "canvas": "1.6.10",
     "cors": "^2.8.4",
     "express": "^4.16.3"
   },
