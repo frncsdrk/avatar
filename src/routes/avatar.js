@@ -24,7 +24,7 @@ router.get('/random', (req, res, next) => {
             width: 256,
             height: 256,
             elementWidth: 16,
-            color: '#'+(Math.random()*0xFFFFFF<<0).toString(16),
+            color: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
             type: Math.round(Math.random()) ? 'circle' : ''
         },
         (err, data) => {
