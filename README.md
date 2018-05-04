@@ -1,6 +1,8 @@
 avatar
 ===
 
+[![Build Status](https://travis-ci.org/frncsdrk/avatar.svg?branch=master)](https://travis-ci.org/frncsdrk/avatar)
+
 create a random avatar  
 Inspired by github default avatars
 
