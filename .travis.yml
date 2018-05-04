@@ -1,7 +1,8 @@
 language: node_js
 node_js:
   - node
-cache: yarn
+cache: npm
+before_script: sudo npm i -g now
 script: npm run deploy
 after_script: npm run alias
 env:
