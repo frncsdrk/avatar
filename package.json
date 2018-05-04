@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "description": "create an avatar",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "deploy": "now -e NODE_ENV=production --token $NOW_TOKEN --npm",
+    "alias": "now alias --token=$NOW_TOKEN"
   },
   "repository": {
     "type": "git",
