@@ -27,5 +27,8 @@
     "canvas": "^2.0.0-alpha.11",
     "cors": "^2.8.4",
     "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "now": "^11.1.7"
   }
 }

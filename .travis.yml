@@ -1,6 +1,7 @@
 language: node_js
 node_js:
   - node
+sudo: required
 cache: npm
 before_script: sudo npm i -g now
 script: npm run deploy
