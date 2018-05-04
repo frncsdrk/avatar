@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "node src/index.js",
-    "deploy": "now -e NODE_ENV=production --token $NOW_TOKEN --npm",
+    "deploy": "now -e NODE_ENV=production --token $NOW_TOKEN --npm --regions bru",
     "alias": "now alias --token=$NOW_TOKEN"
   },
   "repository": {
