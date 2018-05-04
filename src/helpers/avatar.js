@@ -1,6 +1,21 @@
 const Canvas = require('canvas');
 
+const parseConfig = (conf) => {
+    const intKeys = ['width', 'height', 'elementWidth'];
+    for (let i = 0; i < intKeys.length; i++) {
+        conf[intKeys[i]] = parseInt(conf[intKeys[i]]);
+    }
+    const boolKeys = ['verticallySymmetric', 'horizontallySymmetric', 'stroke'];
+    for (let i = 0; i < boolKeys.length; i++) {
+        conf[boolKeys[i]] = (conf[boolKeys[i]] === 'true');
+    }
+
+    return conf;
+};
+
 const createAvatar = (conf, cb) => {
+    conf = parseConfig(conf);
+
     const canvas = new Canvas(conf.width || 256, conf.height || 256);
     const ctx = canvas.getContext('2d');
     const WIDTH = conf.width || 256;
