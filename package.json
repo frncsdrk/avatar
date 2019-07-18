@@ -1,6 +1,6 @@
 {
   "name": "avatar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "create an avatar",
   "main": "src/app.js",
   "private": true,
