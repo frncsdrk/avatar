@@ -1,6 +1,7 @@
 language: node_js
 node_js:
-  - node
+  - "node"
+  - "lts/*"
 cache: npm
 addons:
   apt:
@@ -11,8 +12,3 @@ addons:
       - libgif-dev
       - build-essential
       - g++
-script: npm run deploy
-after_script: npm run alias
-env:
-  global:
-    secure: OZXPzpwzCpBrEppsTUQAzpGS2LGNi85ItM729UjI96ij9Q6xj+iPGrjowwgeYizMACQZKBwr1qaeXG04W7rmiAItnYQhFgsTioEYLanZr2O4EUy18JNYrHkUNPBplTVcFFCZKqUWTq4WifSvTJTK3eGVOs9YrrPKZfFw8H6+SC/gKLtFicD3XIhBaLJDBMgXikeCRao5A8DW6rXl2hVEXSQUz1jO/khteCe7592g0k3DGTqdxjkxfoDNKY+RcqQPp7B71KwppFUX61jTtObmrXTcswZ1SKV+BXjDXmgcGtebxcfWnb4XO4nnmVvuGnmpqQj7U63rqXY0X9x1ZOxfeB7rSKzxfXsuTHdo8tWwVgzoyNeMsOkhuQ5xXBC+Vz2IIKyrvRVcV3P+B6q/u86Mh8ksChmXZIPzF56SRiN5OFdHaSg0H5xLKmkD4bQFoOZHHRHeSywwznAcb5whsGCoJGEvPxiqf22gzkB7P7MQFeIqK7lKuDjjv2//bzCgZZvE8JJUZauNSDEBBFS59BG0g9I8RR/0iwfwGsLBM08cy/5Eqaevf6KIp0Y6W90hyzQ5UmH8tI5tNrPztlVq7NoZWYdOMTDchGVgSNfGWUh4oRQzya0wDW/PWND0cGIl3YBqO0m7PCQCN6eaAnES7hzYQhzGLYfunJBby/2RWOuF6sI=
