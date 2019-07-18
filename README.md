@@ -1,5 +1,4 @@
-avatar
-===
+# avatar
 
 [![Build Status](https://travis-ci.org/frncsdrk/avatar.svg?branch=master)](https://travis-ci.org/frncsdrk/avatar)
 
@@ -36,4 +35,4 @@ Inspired by github default avatars
 ## License
 
 [License](https://github.com/frncsdrk/avatar/blob/master/LICENSE)  
-(c) 2018 frncsdrk
+(c) 2019 frncsdrk
