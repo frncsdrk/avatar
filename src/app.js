@@ -21,4 +21,6 @@ const start = () => {
     });
 };
 
-module.exports = start;
+module.exports = {
+    start
+};

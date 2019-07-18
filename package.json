@@ -2,12 +2,11 @@
   "name": "avatar",
   "version": "0.1.0",
   "description": "create an avatar",
-  "main": "index.js",
+  "main": "src/app.js",
   "private": true,
   "scripts": {
-    "start": "node src/index.js",
-    "deploy": "now -e NODE_ENV=production --token $NOW_TOKEN --npm --regions bru",
-    "alias": "now alias --token=$NOW_TOKEN"
+    "dev": "nodemon bin/www",
+    "start": "node bin/www"
   },
   "repository": {
     "type": "git",
@@ -28,5 +27,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
 }
