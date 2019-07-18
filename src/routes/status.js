@@ -1,18 +1,18 @@
-const express = require('express');
+const express = require('express')
 
-const respond = require('./respond');
+const respond = require('./respond')
 
-const router = express.Router();
+const router = express.Router()
 
 router.get('/', (req, res, next) => {
-    respond({
-        err: null,
-        res,
-        data: {
-            status: 200,
-            message: 'OK'
-        }
-    })
-});
+  respond({
+    err: null,
+    res,
+    data: {
+      status: 200,
+      message: 'OK'
+    }
+  })
+})
 
-module.exports = router;
+module.exports = router
