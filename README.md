@@ -11,15 +11,15 @@ Inspired by github default avatars
 
 - GET / - get an avatar with the possiblity to customize it to some degree
   - query
-    - {integer} width
-    - {integer} height
-    - {boolean} verticallySymmetric
-    - {boolean} horizontallySymmetric (will only be used if verticallySymmetric is explicitly turned off)
+    - {integer} width (default: 256px)
+    - {integer} height (default: 256px)
+    - {boolean} verticallySymmetric (default: true)
+    - {boolean} horizontallySymmetric (default: false) (will only be used if verticallySymmetric is explicitly turned off)
     - {string}  type (element type, 'square' (default), 'circle')
-    - {integer} elementWidth
-    - {string}  color - color of elements
-    - {string}  bgColor - background color
-    - {boolean} stroke - add stroke to outline elements
+    - {integer} elementWidth (default: 16px)
+    - {string}  color - color of elements (default: blue)
+    - {string}  bgColor - background color (default: black)
+    - {boolean} stroke - add stroke to outline elements (default: false)
     - {string}  strokeColor
 
 - GET /random - get an avatar without the need to specify any parameters
