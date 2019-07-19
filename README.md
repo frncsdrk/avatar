@@ -9,7 +9,7 @@ Inspired by github default avatars
 
 ### /avatar
 
-- GET / - get an avatar with the possiblity to customize it to some degree
+- GET / - get a customizable avatar with sane defaults
   - query
     - {integer} width (default: 256px)
     - {integer} height (default: 256px)
@@ -22,7 +22,7 @@ Inspired by github default avatars
     - {boolean} stroke - add stroke to outline elements (default: false)
     - {string}  strokeColor
 
-- GET /random - get an avatar without the need to specify any parameters
+- GET /random - get a randomized avatar without the need to specify any parameters
   - image
 
 
