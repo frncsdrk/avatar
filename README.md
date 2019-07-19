@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/frncsdrk/avatar.svg?branch=master)](https://travis-ci.org/frncsdrk/avatar)
 
-create a random avatar  
+microservice for creating random avatars
 Inspired by github default avatars
 
 ## routes
@@ -34,5 +34,4 @@ Inspired by github default avatars
 
 ## License
 
-[License](https://github.com/frncsdrk/avatar/blob/master/LICENSE)  
-(c) 2019 frncsdrk
+[MIT](https://github.com/frncsdrk/avatar/blob/master/LICENSE) (c) 2019 frncsdrk
