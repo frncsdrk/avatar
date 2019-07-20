@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/frncsdrk/avatar.svg?branch=master)](https://travis-ci.org/frncsdrk/avatar)
 
-microservice for creating random avatars
+Microservice for creating random avatars
+
 Inspired by github default avatars
 
 ## routes
@@ -21,16 +22,18 @@ Inspired by github default avatars
     - {string}  bgColor - background color (default: black)
     - {boolean} stroke - add stroke to outline elements (default: false)
     - {string}  strokeColor
+  - returns image
 
 - GET /random - get a randomized avatar without the need to specify any parameters
-  - image
+  - returns image
 
 
 ### /status
 
 - GET
-  - {number} status
-  - {string} message
+  - returns JSON
+    - {number} status
+    - {string} message
 
 ## License
 
