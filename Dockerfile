@@ -4,6 +4,6 @@ ADD . /app
 WORKDIR /app
 RUN npm i --only=prod
 
-EXPOSE 10101
+EXPOSE 9000
 
 CMD ["npm", "start"]
