@@ -6,9 +6,13 @@ Microservice for creating random avatars
 
 Inspired by github default avatars
 
-## routes
+## Usage
 
-### /avatar
+Default **Port**: `9000`
+
+### Routes
+
+#### /avatar
 
 - GET / - get a customizable avatar with sane defaults
   - query
@@ -28,7 +32,7 @@ Inspired by github default avatars
   - returns image
 
 
-### /status
+#### /status
 
 - GET
   - returns JSON
