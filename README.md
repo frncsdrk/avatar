@@ -41,4 +41,4 @@ Default **Port**: `9000`
 
 ## License
 
-[MIT](https://github.com/frncsdrk/avatar/blob/master/LICENSE) (c) 2018 - present frncsdrk
+[MIT](https://github.com/frncsdrk/avatar/blob/master/LICENSE) (c) 2018 - 2019 frncsdrk and contributors
