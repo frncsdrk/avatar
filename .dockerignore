@@ -1,0 +1,7 @@
+.editorconfig
+.eslintignore
+.eslintrc.js
+.gitignore
+.travis.yml
+CONTRIBUTING.md
+docker-compose.yml
