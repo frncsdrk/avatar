@@ -1,3 +1,7 @@
+#!/usr/bin/env node
+#
+# service executable
+
 const app = require('../src/app')
 
 app.start()
