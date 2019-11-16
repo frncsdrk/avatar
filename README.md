@@ -39,6 +39,14 @@ Default **Port**: `9000`
     - {number} status
     - {string} message
 
+## Contributions
+
+see `CONTRIBUTING`
+
+## Credits
+
+see `CREDITS` file
+
 ## License
 
 [MIT](https://github.com/frncsdrk/avatar/blob/master/LICENSE) (c) 2018 - 2019 frncsdrk and contributors
