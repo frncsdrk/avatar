@@ -1,0 +1,17 @@
+
+        In a similar fashion to the Linux source tree
+        this file contains a list of contributors
+        with a description of their contributions.
+        See `CONTRIBUTING` for a description of how to
+        get added.
+        The list is sorted alphabetically by username and
+	      formatted to allow easy grepping and beautification
+        by scripts. The fields are: username (U), name (N),
+        email (E), web-address (W), and description (D).
+        Thanks,
+                  frncsdrk
+
+----------
+
+U: frncsdrk
+D: Code, Docs
