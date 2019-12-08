@@ -13,6 +13,17 @@ const parseConfig = (conf) => {
   return conf
 }
 
+const drawTriangleTop = (ctx, x, y, width, height, stroke) => {
+  ctx.beginPath()
+  ctx.moveTo(x + (width / 2), y)
+  ctx.lineTo(x + width, y + height)
+  ctx.lineTo(x, y + height)
+  ctx.closePath()
+  ctx.fill()
+  stroke && ctx.stroke()
+}
+
+// TODO: refactor
 const createAvatar = (conf, cb) => {
   conf = parseConfig(conf)
 
@@ -56,6 +67,16 @@ const createAvatar = (conf, cb) => {
             ctx.arc(j * elementWidth + radius, (((elementsPerCol * 2 - i) - 1) * elementWidth) + radius, radius, 0, 2 * Math.PI)
             ctx.fill()
             conf.stroke && ctx.stroke()
+          }
+        } else if (conf.type === 'triangle') {
+          // TODO: Triangles facing in other directions
+          drawTriangleTop(ctx, j * elementWidth, i * elementWidth, elementWidth, elementWidth, conf.stroke)
+          if (verticallySymmetric) {
+            // mirror vertically
+            drawTriangleTop(ctx, ((elementsPerRow * 2 - j) - 1) * elementWidth, i * elementWidth, elementWidth, elementWidth, conf.stroke)
+          } else if (horizontallySymmetric && !verticallySymmetric) {
+            // mirror horizontally
+            drawTriangleTop(ctx, j * elementWidth, ((elementsPerCol * 2 - i) - 1) * elementWidth, elementWidth, elementWidth, conf.stroke)
           }
         } else {
           ctx.rect(j * elementWidth, i * elementWidth, elementWidth, elementWidth)
