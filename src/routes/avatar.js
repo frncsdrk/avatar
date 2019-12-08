@@ -2,6 +2,7 @@ const express = require('express')
 
 const respond = require('./respond')
 const createAvatar = require('./../helpers/avatar').createAvatar
+const random = require('./../helpers/random')
 
 const router = express.Router()
 
@@ -18,6 +19,7 @@ router.get('/', (req, res, next) => {
     }
   )
 })
+
 router.get('/random', (req, res, next) => {
   createAvatar(
     {
@@ -25,7 +27,7 @@ router.get('/random', (req, res, next) => {
       height: 256,
       elementWidth: 16,
       color: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
-      type: Math.round(Math.random()) ? 'circle' : ''
+      type: random.getRandomShapeType()
     },
     (err, data) => {
       respond({

@@ -20,7 +20,7 @@ Default **Port**: `9000`
     - {integer} height (default: 256px)
     - {boolean} verticallySymmetric (default: true)
     - {boolean} horizontallySymmetric (default: false) (will only be used if verticallySymmetric is explicitly turned off)
-    - {string}  type (element type, 'square' (default), 'circle')
+    - {string}  type (element type, 'square' (default), 'circle', 'triangle')
     - {integer} elementWidth (default: 16px)
     - {string}  color - color of elements (default: blue)
     - {string}  bgColor - background color (default: black)
