@@ -49,4 +49,4 @@ see `CREDITS` file
 
 ## License
 
-[MIT](https://github.com/frncsdrk/avatar/blob/master/LICENSE) (c) 2018 - 2019 frncsdrk and contributors
+[MIT](https://github.com/frncsdrk/avatar/blob/master/LICENSE) (c) 2018 - 2020 frncsdrk and contributors
