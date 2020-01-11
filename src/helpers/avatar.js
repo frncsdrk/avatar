@@ -52,9 +52,6 @@ const createAvatar = (conf, cb) => {
   const verticallySymmetric = !conf.horizontallySymmetric ? conf.verticallySymmetric || true : false
   const horizontallySymmetric = conf.horizontallySymmetric || false
 
-  ctx.fillStyle = conf.color || 'blue'
-  ctx.strokeStyle = conf.strokeColor || 'black'
-
   const elementsPerRow = !verticallySymmetric ? WIDTH / elementWidth : WIDTH / elementWidth / 2
   const elementsPerCol = horizontallySymmetric && !verticallySymmetric ? HEIGHT / elementWidth / 2 : HEIGHT / elementWidth
 
@@ -63,6 +60,10 @@ const createAvatar = (conf, cb) => {
     ctx.fillStyle = conf.bgColor
     ctx.fillRect(0, 0, WIDTH, HEIGHT)
   }
+
+  // NOTE: Need to change colors after bg is drawn
+  ctx.fillStyle = conf.color || 'blue'
+  ctx.strokeStyle = conf.strokeColor || 'black'
 
   for (let i = 0; i < elementsPerCol; i++) {
     for (let j = 0; j < elementsPerRow; j++) {
