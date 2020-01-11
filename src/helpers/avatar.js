@@ -13,6 +13,17 @@ const parseConfig = (conf) => {
   return conf
 }
 
+const drawShape = (conf, options) => {
+  conf.drawCb()
+  if (options.verticallySymmetric) {
+    // mirror vertically
+    conf.drawVerticallySymmetricCb()
+  } else if (options.horizontallySymmetric && !options.verticallySymmetric) {
+    // mirror horizontally
+    conf.drawHorizontallySymmetricCb()
+  }
+}
+
 const drawArc = (ctx, x, y, radius, startingAngle, endingAngle, stroke) => {
   ctx.beginPath()
   ctx.arc(x, y, radius, startingAngle, endingAngle)
@@ -30,7 +41,6 @@ const drawTriangleTop = (ctx, x, y, width, height, stroke) => {
   stroke && ctx.stroke()
 }
 
-// TODO: refactor
 const createAvatar = (conf, cb) => {
   conf = parseConfig(conf)
 
@@ -42,49 +52,77 @@ const createAvatar = (conf, cb) => {
   const verticallySymmetric = !conf.horizontallySymmetric ? conf.verticallySymmetric || true : false
   const horizontallySymmetric = conf.horizontallySymmetric || false
 
+  ctx.fillStyle = conf.color || 'blue'
+  ctx.strokeStyle = conf.strokeColor || 'black'
+
+  const elementsPerRow = !verticallySymmetric ? WIDTH / elementWidth : WIDTH / elementWidth / 2
+  const elementsPerCol = horizontallySymmetric && !verticallySymmetric ? HEIGHT / elementWidth / 2 : HEIGHT / elementWidth
+
   if (conf.bgColor) {
     ctx.beginPath()
     ctx.fillStyle = conf.bgColor
     ctx.fillRect(0, 0, WIDTH, HEIGHT)
   }
 
-  ctx.fillStyle = conf.color || 'blue'
-  ctx.strokeStyle = conf.strokeColor || 'black'
-  const elementsPerRow = !verticallySymmetric ? WIDTH / elementWidth : WIDTH / elementWidth / 2
-  const elementsPerCol = horizontallySymmetric && !verticallySymmetric ? HEIGHT / elementWidth / 2 : HEIGHT / elementWidth
-
   for (let i = 0; i < elementsPerCol; i++) {
     for (let j = 0; j < elementsPerRow; j++) {
       if (Math.random() > 0.5) {
         if (conf.type === 'circle') {
           const radius = elementWidth / 2
-          drawArc(ctx, j * elementWidth + radius, i * elementWidth + radius, radius, 0, 2 * Math.PI, conf.stroke)
-          if (verticallySymmetric) {
-            // mirror vertically
-            drawArc(ctx, (((elementsPerRow * 2 - j) - 1) * elementWidth) + radius, i * elementWidth + radius, radius, 0, 2 * Math.PI, conf.stroke)
-          } else if (horizontallySymmetric && !verticallySymmetric) {
-            // mirror horizontally
-            drawArc(ctx, j * elementWidth + radius, (((elementsPerCol * 2 - i) - 1) * elementWidth) + radius, radius, 0, 2 * Math.PI, conf.stroke)
-          }
+          drawShape(
+            {
+              drawCb: () => {
+                drawArc(ctx, j * elementWidth + radius, i * elementWidth + radius, radius, 0, 2 * Math.PI, conf.stroke)
+              },
+              drawVerticallySymmetricCb: () => {
+                drawArc(ctx, (((elementsPerRow * 2 - j) - 1) * elementWidth) + radius, i * elementWidth + radius, radius, 0, 2 * Math.PI, conf.stroke)
+              },
+              drawHorizontallySymmetricCb: () => {
+                drawArc(ctx, j * elementWidth + radius, (((elementsPerCol * 2 - i) - 1) * elementWidth) + radius, radius, 0, 2 * Math.PI, conf.stroke)
+              }
+            },
+            {
+              verticallySymmetric,
+              horizontallySymmetric
+            }
+          )
         } else if (conf.type === 'triangle') {
           // TODO: Triangles facing in other directions
-          drawTriangleTop(ctx, j * elementWidth, i * elementWidth, elementWidth, elementWidth, conf.stroke)
-          if (verticallySymmetric) {
-            // mirror vertically
-            drawTriangleTop(ctx, ((elementsPerRow * 2 - j) - 1) * elementWidth, i * elementWidth, elementWidth, elementWidth, conf.stroke)
-          } else if (horizontallySymmetric && !verticallySymmetric) {
-            // mirror horizontally
-            drawTriangleTop(ctx, j * elementWidth, ((elementsPerCol * 2 - i) - 1) * elementWidth, elementWidth, elementWidth, conf.stroke)
-          }
+          drawShape(
+            {
+              drawCb: () => {
+                drawTriangleTop(ctx, j * elementWidth, i * elementWidth, elementWidth, elementWidth, conf.stroke)
+              },
+              drawVerticallySymmetricCb: () => {
+                drawTriangleTop(ctx, ((elementsPerRow * 2 - j) - 1) * elementWidth, i * elementWidth, elementWidth, elementWidth, conf.stroke)
+              },
+              drawHorizontallySymmetricCb: () => {
+                drawTriangleTop(ctx, j * elementWidth, ((elementsPerCol * 2 - i) - 1) * elementWidth, elementWidth, elementWidth, conf.stroke)
+              }
+            },
+            {
+              verticallySymmetric,
+              horizontallySymmetric
+            }
+          )
         } else {
-          ctx.rect(j * elementWidth, i * elementWidth, elementWidth, elementWidth)
-          if (verticallySymmetric) {
-            // mirror vertically
-            ctx.rect(((elementsPerRow * 2 - j) - 1) * elementWidth, i * elementWidth, elementWidth, elementWidth)
-          } else if (horizontallySymmetric && !verticallySymmetric) {
-            // mirror horizontally
-            ctx.rect(j * elementWidth, ((elementsPerCol * 2 - i) - 1) * elementWidth, elementWidth, elementWidth)
-          }
+          drawShape(
+            {
+              drawCb: () => {
+                ctx.rect(j * elementWidth, i * elementWidth, elementWidth, elementWidth)
+              },
+              drawVerticallySymmetricCb: () => {
+                ctx.rect(((elementsPerRow * 2 - j) - 1) * elementWidth, i * elementWidth, elementWidth, elementWidth)
+              },
+              drawHorizontallySymmetricCb: () => {
+                ctx.rect(j * elementWidth, ((elementsPerCol * 2 - i) - 1) * elementWidth, elementWidth, elementWidth)
+              }
+            },
+            {
+              verticallySymmetric,
+              horizontallySymmetric
+            }
+          )
         }
       }
     }
