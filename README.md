@@ -23,7 +23,7 @@ Default **Port**: `9000`
     - {string}  type (element type, 'square' (default), 'circle', 'triangle')
     - {integer} elementWidth (default: 16px)
     - {string}  color - color of elements (default: blue)
-    - {string}  bgColor - background color (default: black)
+    - {string}  bgColor - background color (default: transparent)
     - {boolean} stroke - add stroke to outline elements (default: false)
     - {string}  strokeColor
   - returns image
