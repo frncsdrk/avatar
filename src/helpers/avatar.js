@@ -13,6 +13,13 @@ const parseConfig = (conf) => {
   return conf
 }
 
+const drawArc = (ctx, x, y, radius, startingAngle, endingAngle, stroke) => {
+  ctx.beginPath()
+  ctx.arc(x, y, radius, startingAngle, endingAngle)
+  ctx.fill()
+  stroke && ctx.stroke()
+}
+
 const drawTriangleTop = (ctx, x, y, width, height, stroke) => {
   ctx.beginPath()
   ctx.moveTo(x + (width / 2), y)
@@ -51,22 +58,13 @@ const createAvatar = (conf, cb) => {
       if (Math.random() > 0.5) {
         if (conf.type === 'circle') {
           const radius = elementWidth / 2
-          ctx.beginPath()
-          ctx.arc(j * elementWidth + radius, i * elementWidth + radius, radius, 0, 2 * Math.PI)
-          ctx.fill()
-          conf.stroke && ctx.stroke()
+          drawArc(ctx, j * elementWidth + radius, i * elementWidth + radius, radius, 0, 2 * Math.PI, conf.stroke)
           if (verticallySymmetric) {
             // mirror vertically
-            ctx.beginPath()
-            ctx.arc((((elementsPerRow * 2 - j) - 1) * elementWidth) + radius, i * elementWidth + radius, radius, 0, 2 * Math.PI)
-            ctx.fill()
-            conf.stroke && ctx.stroke()
+            drawArc(ctx, (((elementsPerRow * 2 - j) - 1) * elementWidth) + radius, i * elementWidth + radius, radius, 0, 2 * Math.PI, conf.stroke)
           } else if (horizontallySymmetric && !verticallySymmetric) {
             // mirror horizontally
-            ctx.beginPath()
-            ctx.arc(j * elementWidth + radius, (((elementsPerCol * 2 - i) - 1) * elementWidth) + radius, radius, 0, 2 * Math.PI)
-            ctx.fill()
-            conf.stroke && ctx.stroke()
+            drawArc(ctx, j * elementWidth + radius, (((elementsPerCol * 2 - i) - 1) * elementWidth) + radius, radius, 0, 2 * Math.PI, conf.stroke)
           }
         } else if (conf.type === 'triangle') {
           // TODO: Triangles facing in other directions
