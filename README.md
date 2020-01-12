@@ -1,6 +1,6 @@
 # avatar
 
-[![Build Status](https://travis-ci.org/frncsdrk/avatar.svg?branch=master)](https://travis-ci.org/frncsdrk/avatar)
+[![Build Status](https://api.cirrus-ci.com/github/frncsdrk/avatar.svg)](https://cirrus-ci.com/github/frncsdrk/avatar)
 
 Microservice for creating random avatars
 
