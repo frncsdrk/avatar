@@ -1,0 +1,20 @@
+---
+
+container:
+  image: node:lts
+
+lts_check_task:
+  node_modules_cache:
+    folder: node_modules
+    fingerprint_script: cat package-lock.json
+    populate_script: npm ci
+
+latest_check_task:
+  container:
+    image: node_latest
+  node_modules_cache:
+    folder: node_modules
+    fingerprint_script: cat package-lock.json
+    populate_script: npm ci
+
+...
