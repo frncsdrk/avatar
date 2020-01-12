@@ -3,15 +3,11 @@
 container:
   image: node:lts
 
-lts_check_task:
-  node_modules_cache:
-    folder: node_modules
-    fingerprint_script: cat package-lock.json
-    populate_script: npm ci
-
-latest_check_task:
+check_task:
   container:
-    image: node_latest
+    matrix:
+      - image: node:lts
+      - image: node:latest
   node_modules_cache:
     folder: node_modules
     fingerprint_script: cat package-lock.json
