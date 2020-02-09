@@ -10,42 +10,57 @@ Inspired by github default avatars
 
 Default **Port**: `9000`
 
-### Routes
+## Routes
 
-#### /avatar
+### /avatar
 
-- GET / - get a customizable avatar with sane defaults
-  - query
-    - {integer} width (default: 256px)
-    - {integer} height (default: 256px)
-    - {boolean} verticallySymmetric (default: true)
-    - {boolean} horizontallySymmetric (default: false) (will only be used if verticallySymmetric is explicitly turned off)
-    - {string}  type (element type, 'square' (default), 'circle', 'triangle')
-    - {integer} elementWidth (default: 16px)
-    - {string}  color - color of elements (default: blue)
-    - {string}  bgColor - background color (default: transparent)
-    - {boolean} stroke - add stroke to outline elements (default: false)
-    - {string}  strokeColor
-  - returns image
+**Type:** `GET`
 
-- GET /random - get a randomized avatar without the need to specify any parameters
-  - returns image
+get a customizable avatar with sane defaults
 
+**query**
 
-#### /status
+```
+{integer} width (default: 256px)
+{integer} height (default: 256px)
+{boolean} verticallySymmetric (default: true)
+{boolean} horizontallySymmetric (default: false) (will only be used if verticallySymmetric is explicitly turned off)
+{string}  type (element type, 'square' (default), 'circle', 'triangle')
+{integer} elementWidth (default: 16px)
+{string}  color - color of elements (default: blue)
+{string}  bgColor - background color (default: transparent)
+{boolean} stroke - add stroke to outline elements (default: false)
+{string}  strokeColor
+```
 
-- GET
-  - returns JSON
-    - {number} status
-    - {string} message
+**returns image**
+
+### /avatar/random
+
+**Type:** `GET`
+
+get a randomized avatar without the need to specify any parameters
+
+**returns image**
+
+### /status
+
+**Type:** `GET`
+
+**returns JSON**
+
+```
+{number} status
+{string} message
+```
 
 ## Contributions
 
-see `CONTRIBUTING`
+see [CONTRIBUTING](https://github.com/frncsdrk/avatar/blob/master/CONTRIBUTING.md)
 
 ## Credits
 
-see `CREDITS` file
+see [CREDITS](https://github.com/frncsdrk/avatar/blob/master/CREDITS)
 
 ## License
 
