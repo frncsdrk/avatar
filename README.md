@@ -16,7 +16,7 @@ Default **Port**: `9000`
 
 **Type:** `GET`
 
-get a customizable avatar with sane defaults
+Get a customizable avatar with sane defaults
 
 **query**
 
@@ -39,13 +39,15 @@ get a customizable avatar with sane defaults
 
 **Type:** `GET`
 
-get a randomized avatar without the need to specify any parameters
+Get a randomized avatar without the need to specify any parameters
 
 **returns image**
 
 ### /status
 
 **Type:** `GET`
+
+Get liveness of service
 
 **returns JSON**
 
@@ -56,11 +58,11 @@ get a randomized avatar without the need to specify any parameters
 
 ## Contributions
 
-see [CONTRIBUTING](https://github.com/frncsdrk/avatar/blob/master/CONTRIBUTING.md)
+See [CONTRIBUTING](https://github.com/frncsdrk/avatar/blob/master/CONTRIBUTING.md)
 
 ## Credits
 
-see [CREDITS](https://github.com/frncsdrk/avatar/blob/master/CREDITS)
+See [CREDITS](https://github.com/frncsdrk/avatar/blob/master/CREDITS)
 
 ## License
 
