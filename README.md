@@ -43,7 +43,19 @@ Get a randomized avatar without the need to specify any parameters
 
 **returns image**
 
-### /status
+### /healthz
+
+**Type:** `GET`
+
+Get liveness of service
+
+**returns JSON**
+
+```
+{string} msg
+```
+
+### /status (deprecated)
 
 **Type:** `GET`
 
