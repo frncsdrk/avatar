@@ -1,8 +1,8 @@
 const express = require('express')
 
-const respond = require('./respond')
-const createAvatar = require('./../helpers/avatar').createAvatar
-const random = require('./../helpers/random')
+const respond = require('../utils/respond')
+const createAvatar = require('./../utils/avatar').createAvatar
+const random = require('./../utils/random')
 
 const router = express.Router()
 

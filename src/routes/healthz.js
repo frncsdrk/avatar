@@ -1,6 +1,6 @@
 const express = require('express')
 
-const respond = require('./respond')
+const respond = require('../utils/respond')
 
 const router = express.Router()
 
