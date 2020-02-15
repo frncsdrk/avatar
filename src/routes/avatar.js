@@ -11,10 +11,11 @@ router.get('/', (req, res, next) => {
     req.query,
     (err, data) => {
       respond({
-        err,
-        res,
+        contentType: 'image/png',
         data,
-        contentType: 'image/png'
+        err,
+        next,
+        res
       })
     }
   )
@@ -31,10 +32,11 @@ router.get('/random', (req, res, next) => {
     },
     (err, data) => {
       respond({
-        err,
-        res,
+        contentType: 'image/png',
         data,
-        contentType: 'image/png'
+        err,
+        next,
+        res
       })
     }
   )
