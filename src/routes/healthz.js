@@ -6,11 +6,11 @@ const router = express.Router()
 
 router.get('/', (req, res, next) => {
   respond({
-    err: null,
-    res,
     data: {
       msg: 'OK'
-    }
+    },
+    next,
+    res
   })
 })
 
