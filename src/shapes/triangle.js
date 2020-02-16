@@ -1,7 +1,6 @@
 // TODO: Triangles facing in other directions
 
-// TODO: Generalize
-const drawRaw = (ctx, x, y, width, height, stroke) => {
+const drawRawTop = (ctx, x, y, width, height, stroke) => {
   ctx.beginPath()
   ctx.moveTo(x + (width / 2), y)
   ctx.lineTo(x + width, y + height)
@@ -11,10 +10,9 @@ const drawRaw = (ctx, x, y, width, height, stroke) => {
   stroke && ctx.stroke()
 }
 
-// TODO: Add methods for different directions of triangles
 const draw = (context) => {
   const elementWidth = context.elementWidth
-  drawRaw(
+  drawRawTop(
     context.ctx,
     context.positionX * elementWidth,
     context.positionY * elementWidth,
@@ -26,7 +24,7 @@ const draw = (context) => {
 
 const drawVerticallySymmetric = (context) => {
   const elementWidth = context.elementWidth
-  drawRaw(
+  drawRawTop(
     context.ctx,
     ((context.elementsPerRow * 2 - context.positionX) - 1) * elementWidth,
     context.positionY * elementWidth,
@@ -38,7 +36,7 @@ const drawVerticallySymmetric = (context) => {
 
 const drawHorizontallySymmetric = (context) => {
   const elementWidth = context.elementWidth
-  drawRaw(
+  drawRawTop(
     context.ctx,
     context.positionX * elementWidth,
     ((context.elementsPerCol * 2 - context.positionY) - 1) * elementWidth,
