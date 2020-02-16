@@ -7,8 +7,9 @@ const router = express.Router()
 router.get('/', (req, res, next) => {
   respond({
     data: {
-      status: 200,
-      message: 'OK'
+      deprecated: true,
+      message: 'OK',
+      status: 200
     },
     next,
     res
