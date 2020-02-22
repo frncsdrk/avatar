@@ -1,5 +1,14 @@
 // TODO: Triangles facing in other directions
 
+/**
+ * Draw top facing triangle
+ * @param {object} ctx - canvas context
+ * @param {number} x
+ * @param {number} y
+ * @param {number} width
+ * @param {number} height
+ * @param {boolean} stroke - flag
+ */
 const drawRawTop = (ctx, x, y, width, height, stroke) => {
   ctx.beginPath()
   ctx.moveTo(x + (width / 2), y)
@@ -10,6 +19,10 @@ const drawRawTop = (ctx, x, y, width, height, stroke) => {
   stroke && ctx.stroke()
 }
 
+/**
+ * Draw top facing triangle
+ * @param {object} context
+ */
 const draw = (context) => {
   const elementWidth = context.elementWidth
   drawRawTop(
@@ -22,6 +35,10 @@ const draw = (context) => {
   )
 }
 
+/**
+ * Mirror drawn top facing triangle vertically
+ * @param {object} context
+ */
 const drawVerticallySymmetric = (context) => {
   const elementWidth = context.elementWidth
   drawRawTop(
@@ -34,6 +51,10 @@ const drawVerticallySymmetric = (context) => {
   )
 }
 
+/**
+ * Mirror drawn top facing triangle horizontally
+ * @param {object} context
+ */
 const drawHorizontallySymmetric = (context) => {
   const elementWidth = context.elementWidth
   drawRawTop(

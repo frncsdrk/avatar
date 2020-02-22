@@ -1,3 +1,7 @@
+/**
+ * Select random shape type
+ * @returns {string} shape type
+ */
 const getRandomShapeType = () => {
   const factor = Math.round(Math.random() * 2)
   let type = '' // '' equals rect

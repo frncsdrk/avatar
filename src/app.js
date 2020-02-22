@@ -7,6 +7,9 @@ const avatar = require('./routes/avatar')
 const healthz = require('./routes/healthz')
 const status = require('./routes/status')
 
+/**
+ * Start the app
+ */
 const start = () => {
   const app = express()
 
