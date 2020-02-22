@@ -2,7 +2,7 @@
 
 [![Build Status](https://api.cirrus-ci.com/github/frncsdrk/avatar.svg)](https://cirrus-ci.com/github/frncsdrk/avatar)
 
-Microservice for creating random avatars
+Service for creating random avatars
 
 Inspired by github default avatars
 
@@ -37,7 +37,30 @@ NOTE: When using `image/jpeg` as MIME type specifying a background color
 {string}  mimeType - specify MIME type of image (default: image/png)
 ```
 
-**returns image of specified MIME type**
+**returns image of specified MIME type (default: image/png)**
+
+### /avatar
+
+**Type:** `POST`
+
+Create an avatar of specified form
+
+**query**
+
+Same parameters as in request of type `GET` apply.
+
+**body**
+
+**MIME type:** `text/plain`
+
+example:
+```
+# #
+ #
+# #
+```
+
+**returns image of specified MIME type (default: image/png)**
 
 ### /avatar/random
 
@@ -45,7 +68,7 @@ NOTE: When using `image/jpeg` as MIME type specifying a background color
 
 Get a randomized avatar without the need to specify any parameters
 
-**returns image of type png**
+**returns image of specified MIME type (default: image/png)**
 
 ### /healthz
 
