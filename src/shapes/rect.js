@@ -1,3 +1,7 @@
+/**
+ * Draw rectangle shape
+ * @param {object} context
+ */
 const draw = (context) => {
   const elementWidth = context.elementWidth
   context.ctx.rect(
@@ -8,6 +12,10 @@ const draw = (context) => {
   )
 }
 
+/**
+ * Mirror drawn rectangle shape vertically
+ * @param {object} context
+ */
 const drawVerticallySymmetric = (context) => {
   const elementWidth = context.elementWidth
   context.ctx.rect(
@@ -18,6 +26,10 @@ const drawVerticallySymmetric = (context) => {
   )
 }
 
+/**
+ * Mirror drawn rectangle shape horizontally
+ * @param {object} context
+ */
 const drawHorizontallySymmetric = (context) => {
   const elementWidth = context.elementWidth
   context.ctx.rect(

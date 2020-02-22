@@ -1,3 +1,7 @@
+/**
+ * Response helper
+ * @param {object} conf - config
+ */
 const respond = (conf) => {
   if (typeof conf !== 'object') {
     return false
@@ -25,7 +29,8 @@ const respond = (conf) => {
   res.set('Content-Type', contentType || 'application/json')
   res.status(200)
   res.send(data)
-  next()
+
+  return next()
 }
 
 module.exports = respond

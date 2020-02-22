@@ -6,6 +6,11 @@ const shapes = {
   triangle: require('../shapes/triangle')
 }
 
+/**
+ * Parse config values
+ * @param {object} conf - config
+ * @returns {object} config
+ */
 const parseConfig = (conf) => {
   const intKeys = ['width', 'height', 'elementWidth']
   for (let i = 0; i < intKeys.length; i++) {
@@ -23,6 +28,11 @@ const parseConfig = (conf) => {
   return conf
 }
 
+/**
+ * Draw selected shape with context provided
+ * @param {string} type - shape type
+ * @param {object} context
+ */
 const drawShape = (type, context) => {
   const shape = shapes[type]
   shape.draw(context)
@@ -35,6 +45,11 @@ const drawShape = (type, context) => {
   }
 }
 
+/**
+ * Translate config to context
+ * @param {object} conf - config
+ * @returns {object} context
+ */
 const createContext = (conf) => {
   const canvas = createCanvas(conf.width || 256, conf.height || 256)
   const ctx = canvas.getContext('2d')
@@ -133,7 +148,7 @@ const createAvatar = (conf, cb) => {
 
   const buffer = context.canvas.toBuffer(mimeType)
 
-  cb(
+  return cb(
     null,
     {
       contentType: mimeType,

@@ -1,3 +1,13 @@
+/**
+ * Draw arc shape
+ * @param {object} ctx - canvas context
+ * @param {number} x
+ * @param {number} y
+ * @param {number} radius
+ * @param {number} startingAngle
+ * @param {number} endingAngle
+ * @param {boolean} stroke - flag
+ */
 const drawRaw = (ctx, x, y, radius, startingAngle, endingAngle, stroke) => {
   ctx.beginPath()
   ctx.arc(x, y, radius, startingAngle, endingAngle)
@@ -5,6 +15,10 @@ const drawRaw = (ctx, x, y, radius, startingAngle, endingAngle, stroke) => {
   stroke && ctx.stroke()
 }
 
+/**
+ * Draw circle
+ * @param {object} context
+ */
 const draw = (context) => {
   const elementWidth = context.elementWidth
   drawRaw(
@@ -18,6 +32,10 @@ const draw = (context) => {
   )
 }
 
+/**
+ * Mirror drawn circle shape vertically
+ * @param {object} context
+ */
 const drawVerticallySymmetric = (context) => {
   const elementWidth = context.elementWidth
   const radius = context.radius
@@ -32,6 +50,10 @@ const drawVerticallySymmetric = (context) => {
   )
 }
 
+/**
+ * Mirror drawn circle shape horizontally
+ * @param {object} context
+ */
 const drawHorizontallySymmetric = (context) => {
   const elementWidth = context.elementWidth
   const radius = context.radius
