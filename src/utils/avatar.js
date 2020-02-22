@@ -65,6 +65,7 @@ const createAvatar = (conf, cb) => {
 
   const context = createContext(conf)
   const ctx = context.ctx
+  const mimeType = conf.mimeType || 'image/png'
 
   if (context.bgColor) {
     ctx.beginPath()
@@ -89,9 +90,15 @@ const createAvatar = (conf, cb) => {
   ctx.fill()
   context.stroke && ctx.stroke()
 
-  const buffer = context.canvas.toBuffer()
+  const buffer = context.canvas.toBuffer(mimeType)
 
-  cb(null, buffer)
+  cb(
+    null,
+    {
+      contentType: mimeType,
+      buffer
+    }
+  )
 }
 
 module.exports = {

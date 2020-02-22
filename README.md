@@ -18,6 +18,9 @@ Default **Port**: `9000`
 
 Get a customizable avatar with sane defaults
 
+NOTE: When using `jpeg` as MIME type specifying a background color
+  becomes more important as it is not possible to keep transparency.
+
 **query**
 
 ```
@@ -31,9 +34,10 @@ Get a customizable avatar with sane defaults
 {string}  bgColor - background color (default: transparent)
 {boolean} stroke - add stroke to outline elements (default: false)
 {string}  strokeColor
+{string}  mimeType - specify MIME type of image (default: image/png)
 ```
 
-**returns image**
+**returns image of specified MIME type**
 
 ### /avatar/random
 
@@ -41,7 +45,7 @@ Get a customizable avatar with sane defaults
 
 Get a randomized avatar without the need to specify any parameters
 
-**returns image**
+**returns image of type png**
 
 ### /healthz
 

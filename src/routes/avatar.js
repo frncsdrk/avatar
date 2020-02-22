@@ -11,8 +11,8 @@ router.get('/', (req, res, next) => {
     req.query,
     (err, data) => {
       respond({
-        contentType: 'image/png',
-        data,
+        contentType: data.contentType,
+        data: data.buffer,
         err,
         next,
         res
@@ -32,8 +32,8 @@ router.get('/random', (req, res, next) => {
     },
     (err, data) => {
       respond({
-        contentType: 'image/png',
-        data,
+        contentType: data.contentType,
+        data: data.buffer,
         err,
         next,
         res
