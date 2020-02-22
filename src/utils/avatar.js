@@ -9,11 +9,15 @@ const shapes = {
 const parseConfig = (conf) => {
   const intKeys = ['width', 'height', 'elementWidth']
   for (let i = 0; i < intKeys.length; i++) {
-    conf[intKeys[i]] = parseInt(conf[intKeys[i]])
+    if (conf[intKeys[i]]) {
+      conf[intKeys[i]] = parseInt(conf[intKeys[i]], 10)
+    }
   }
   const boolKeys = ['verticallySymmetric', 'horizontallySymmetric', 'stroke']
   for (let i = 0; i < boolKeys.length; i++) {
-    conf[boolKeys[i]] = (conf[boolKeys[i]] === 'true')
+    if (conf[boolKeys[i]]) {
+      conf[boolKeys[i]] = (conf[boolKeys[i]] === 'true')
+    }
   }
 
   return conf
@@ -38,7 +42,7 @@ const createContext = (conf) => {
   const HEIGHT = conf.height || 256
   const elementWidth = conf.elementWidth || 16
   const radius = elementWidth / 2
-  const verticallySymmetric = !conf.horizontallySymmetric ? conf.verticallySymmetric || true : false
+  const verticallySymmetric = !(conf.horizontallySymmetric || conf.verticallySymmetric === false)
   const horizontallySymmetric = conf.horizontallySymmetric || false
 
   const elementsPerRow = !verticallySymmetric ? WIDTH / elementWidth : WIDTH / elementWidth / 2
@@ -56,7 +60,8 @@ const createContext = (conf) => {
     stroke: conf.stroke,
     bgColor: conf.bgColor,
     elementsPerRow,
-    elementsPerCol
+    elementsPerCol,
+    body: conf.body
   }
 }
 
@@ -77,12 +82,26 @@ const createAvatar = (conf, cb) => {
   ctx.fillStyle = conf.color || 'blue'
   ctx.strokeStyle = conf.strokeColor || 'black'
 
-  for (let i = 0; i < context.elementsPerCol; i++) {
-    for (let j = 0; j < context.elementsPerRow; j++) {
-      if (Math.random() > 0.5) {
-        context.positionX = j
-        context.positionY = i
-        drawShape(conf.type || 'rect', context)
+  if (conf.body) {
+    const lines = conf.body.split('\n')
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i]
+      for (let j = 0; j < line.length; j++) {
+        if (line.charAt(j) !== ' ') {
+          context.positionX = j
+          context.positionY = i
+          drawShape(conf.type || 'rect', context)
+        }
+      }
+    }
+  } else {
+    for (let i = 0; i < context.elementsPerCol; i++) {
+      for (let j = 0; j < context.elementsPerRow; j++) {
+        if (Math.random() > 0.5) {
+          context.positionX = j
+          context.positionY = i
+          drawShape(conf.type || 'rect', context)
+        }
       }
     }
   }

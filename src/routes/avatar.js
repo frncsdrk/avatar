@@ -21,6 +21,25 @@ router.get('/', (req, res, next) => {
   )
 })
 
+router.post('/', (req, res, next) => {
+  createAvatar(
+    {
+      body: req.body,
+      verticallySymmetric: false,
+      ...req.query
+    },
+    (err, data) => {
+      respond({
+        contentType: data.contentType,
+        data: data.buffer,
+        err,
+        next,
+        res
+      })
+    }
+  )
+})
+
 router.get('/random', (req, res, next) => {
   createAvatar(
     {
