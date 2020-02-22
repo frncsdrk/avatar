@@ -28,7 +28,8 @@ router.get('/random', (req, res, next) => {
       height: 256,
       elementWidth: 16,
       color: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
-      type: random.getRandomShapeType()
+      type: random.getRandomShapeType(),
+      ...req.query
     },
     (err, data) => {
       respond({
