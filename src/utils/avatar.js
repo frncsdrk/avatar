@@ -61,10 +61,50 @@ const createContext = (conf) => {
     bgColor: conf.bgColor,
     elementsPerRow,
     elementsPerCol,
+    type: conf.type,
     body: conf.body
   }
 }
 
+/**
+ * Draw avatar specified in request body
+ * @param {object} context
+ */
+const drawSpecified = (context) => {
+  const lines = context.body.split('\n')
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]
+    for (let j = 0; j < line.length; j++) {
+      if (line.charAt(j) !== ' ') {
+        context.positionX = j
+        context.positionY = i
+        drawShape(context.type || 'rect', context)
+      }
+    }
+  }
+}
+
+/**
+ * Draw random avatar
+ * @param {object} context
+ */
+const drawRandom = (context) => {
+  for (let i = 0; i < context.elementsPerCol; i++) {
+    for (let j = 0; j < context.elementsPerRow; j++) {
+      if (Math.random() > 0.5) {
+        context.positionX = j
+        context.positionY = i
+        drawShape(context.type || 'rect', context)
+      }
+    }
+  }
+}
+
+/**
+ * Create an avatar
+ * @param {object} conf - config
+ * @param {function} cb - callback
+ */
 const createAvatar = (conf, cb) => {
   conf = parseConfig(conf)
 
@@ -82,28 +122,10 @@ const createAvatar = (conf, cb) => {
   ctx.fillStyle = conf.color || 'blue'
   ctx.strokeStyle = conf.strokeColor || 'black'
 
-  if (conf.body) {
-    const lines = conf.body.split('\n')
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i]
-      for (let j = 0; j < line.length; j++) {
-        if (line.charAt(j) !== ' ') {
-          context.positionX = j
-          context.positionY = i
-          drawShape(conf.type || 'rect', context)
-        }
-      }
-    }
+  if (context.body) {
+    drawSpecified(context)
   } else {
-    for (let i = 0; i < context.elementsPerCol; i++) {
-      for (let j = 0; j < context.elementsPerRow; j++) {
-        if (Math.random() > 0.5) {
-          context.positionX = j
-          context.positionY = i
-          drawShape(conf.type || 'rect', context)
-        }
-      }
-    }
+    drawRandom(context)
   }
 
   ctx.fill()
