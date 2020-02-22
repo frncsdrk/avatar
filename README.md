@@ -18,7 +18,7 @@ Default **Port**: `9000`
 
 Get a customizable avatar with sane defaults
 
-NOTE: When using `jpeg` as MIME type specifying a background color
+NOTE: When using `image/jpeg` as MIME type specifying a background color
   becomes more important as it is not possible to keep transparency.
 
 **query**
