@@ -68,6 +68,10 @@ example:
 
 Get a randomized avatar without the need to specify any parameters
 
+**query**
+
+Parameters are overwritable as in `/avatar` request of type `GET`.
+
 **returns image of specified MIME type (default: image/png)**
 
 ### /healthz
