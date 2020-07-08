@@ -1,13 +1,13 @@
 ---
 
 container:
-  image: node:lts
+  image: randomgoods/node-image-libs:lts
 
 check_task:
   container:
     matrix:
-      - image: node:lts
-      - image: node:latest
+      - image: randomgoods/node-image-libs:lts
+      - image: randomgoods/node-image-libs:latest
   node_modules_cache:
     folder: node_modules
     fingerprint_script: cat package-lock.json
