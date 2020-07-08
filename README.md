@@ -1,6 +1,6 @@
 # avatar
 
-![](https://github.com/frncsdrk/avatar/workflows/.github/workflows/build-image.yml/badge.svg)
+[![Build Status](https://github.com/frncsdrk/avatar/workflows/build/badge.svg?branch=master&event=push)](https://github.com/frncsdrk/avatar/actions)
 
 Service for creating random avatars
 
