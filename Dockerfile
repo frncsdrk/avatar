@@ -1,4 +1,4 @@
-FROM node:lts-slim
+FROM randomgoods/node-image-libs:lts-slim
 
 ADD . /app
 WORKDIR /app
