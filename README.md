@@ -109,4 +109,4 @@ See [CREDITS](https://github.com/frncsdrk/avatar/blob/master/CREDITS)
 
 ## License
 
-[MIT](https://github.com/frncsdrk/avatar/blob/master/LICENSE) (c) 2018 - 2020 frncsdrk and contributors
+[MIT](https://github.com/frncsdrk/avatar/blob/master/LICENSE) (c) 2018 - 2021 frncsdrk and contributors
