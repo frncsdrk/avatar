@@ -28,6 +28,7 @@ NOTE: When using `image/jpeg` as MIME type specifying a background color
 {integer} height (default: 256px)
 {boolean} verticallySymmetric (default: true)
 {boolean} horizontallySymmetric (default: false) (will only be used if verticallySymmetric is explicitly turned off)
+{string}  direction (default: 'top') (only relevant for triangles)
 {string}  type (element type, 'square' (default), 'circle', 'triangle')
 {integer} elementWidth (default: 16px)
 {string}  color - color of elements (default: blue)

@@ -59,6 +59,9 @@ const createContext = (conf) => {
   const radius = elementWidth / 2
   const verticallySymmetric = !(conf.horizontallySymmetric || conf.verticallySymmetric === false)
   const horizontallySymmetric = conf.horizontallySymmetric || false
+  // triangles
+  const direction = conf.direction || 'top'
+  // /traingles
 
   const elementsPerRow = !verticallySymmetric ? WIDTH / elementWidth : WIDTH / elementWidth / 2
   const elementsPerCol = horizontallySymmetric && !verticallySymmetric ? HEIGHT / elementWidth / 2 : HEIGHT / elementWidth
@@ -72,6 +75,7 @@ const createContext = (conf) => {
     radius,
     verticallySymmetric,
     horizontallySymmetric,
+    direction,
     stroke: conf.stroke,
     bgColor: conf.bgColor,
     elementsPerRow,
