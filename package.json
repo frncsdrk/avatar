@@ -1,6 +1,6 @@
 {
   "name": "avatar",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "microservice for creating random avatars",
   "main": "src/app.js",
   "private": true,
