@@ -1,5 +1,4 @@
 const express = require('express')
-const bodyParser = require('body-parser')
 const cors = require('cors')
 const config = require('config')
 
@@ -13,9 +12,9 @@ const status = require('./routes/status')
 const start = () => {
   const app = express()
 
-  app.use(bodyParser.json())
-  app.use(bodyParser.text({ limit: '50mb', type: 'text/*' }))
-  app.use(bodyParser.urlencoded({ extended: false }))
+  app.use(express.json())
+  app.use(express.text({ limit: '50mb', type: 'text/*' }))
+  app.use(express.urlencoded({ extended: false }))
   app.use(cors())
 
   app.use('/avatar', avatar)
