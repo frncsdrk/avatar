@@ -1,0 +1,20 @@
+name: push-latest
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: mr-smithers-excellent/docker-build-push@v3
+        with:
+          image: frncsdrk/avatar
+          registry: docker.io
+          tag: latest
+          dockerfile: ./Dockerfile
+          directory: ./
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
