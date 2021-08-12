@@ -1,7 +1,8 @@
 const express = require('express');
 
 const respond = require('../utils/respond');
-const createAvatar = require('./../utils/avatar').createAvatar;
+const { createAvatar } = require('./../utils/avatar');
+const { createInitialsAvatar } = require('./../utils/initials');
 const random = require('./../utils/random');
 
 const router = express.Router();
@@ -59,4 +60,19 @@ router.get('/random', (req, res, next) => {
   );
 });
 
-module.exports = router;
+router.get('/initials', (req, res, next) => {
+  createInitialsAvatar(
+    req.query,
+    (err, data) => {
+      respond({
+        contentType: data.contentType,
+        data: data.buffer,
+        err,
+        next,
+        res
+      })
+    }
+  )
+})
+
+module.exports = router
