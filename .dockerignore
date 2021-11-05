@@ -2,6 +2,5 @@
 .eslintignore
 .eslintrc.js
 .gitignore
-.cirrus.yml
 CONTRIBUTING.md
 docker-compose.yml
