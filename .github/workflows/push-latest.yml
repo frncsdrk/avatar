@@ -13,8 +13,7 @@ jobs:
         with:
           image: frncsdrk/avatar
           registry: docker.io
-          tags:
-            - latest
+          tags: latest
           dockerfile: ./Dockerfile
           directory: ./
           username: ${{ secrets.DOCKER_USERNAME }}
