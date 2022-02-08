@@ -17,7 +17,7 @@ jobs:
         run: |
           echo $RELEASE_VERSION
           echo ${{ env.RELEASE_VERSION }}
-      - uses: mr-smithers-excellent/docker-build-push@v3
+      - uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: frncsdrk/avatar
           registry: docker.io
