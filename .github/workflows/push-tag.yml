@@ -21,7 +21,8 @@ jobs:
         with:
           image: frncsdrk/avatar
           registry: docker.io
-          tag: ${{ env.RELEASE_VERSION }}
+          tags:
+            - ${{ env.RELEASE_VERSION }}
           dockerfile: ./Dockerfile
           directory: ./
           username: ${{ secrets.DOCKER_USERNAME }}
