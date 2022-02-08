@@ -100,6 +100,17 @@ Get liveness of service
 {string} message
 ```
 
+## Development
+
+### Prerequisites
+
+Run `brew install pkg-config cairo pango libpng jpeg giflib librsvg` or similar
+
+### Usage
+
+- Run `npm start` to start service
+- Run `npm run dev` to start service with nodemon
+
 ## Contributions
 
 See [CONTRIBUTING](https://github.com/frncsdrk/avatar/blob/master/CONTRIBUTING.md)
