@@ -1,6 +1,6 @@
 # avatar
 
-[![Build Status](https://github.com/frncsdrk/avatar/workflows/build/badge.svg?branch=master&event=push)](https://github.com/frncsdrk/avatar/actions)
+[![Build Status](https://github.com/frncsdrk/avatar/workflows/build/badge.svg?branch=main&event=push)](https://github.com/frncsdrk/avatar/actions)
 
 Service for creating random avatars
 
@@ -113,12 +113,12 @@ Run `brew install pkg-config cairo pango libpng jpeg giflib librsvg` or similar
 
 ## Contributions
 
-See [CONTRIBUTING](https://github.com/frncsdrk/avatar/blob/master/CONTRIBUTING.md)
+See [CONTRIBUTING](https://github.com/frncsdrk/avatar/blob/main/CONTRIBUTING.md)
 
 ## Credits
 
-See [CREDITS](https://github.com/frncsdrk/avatar/blob/master/CREDITS)
+See [CREDITS](https://github.com/frncsdrk/avatar/blob/main/CREDITS)
 
 ## License
 
-[MIT](https://github.com/frncsdrk/avatar/blob/master/LICENSE) (c) 2018 - 2021 frncsdrk and contributors
+[MIT](https://github.com/frncsdrk/avatar/blob/main/LICENSE) (c) 2018 - 2021 frncsdrk and contributors
