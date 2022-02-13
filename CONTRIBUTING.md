@@ -12,5 +12,5 @@ Open an issue and we will figure out how to get your contribution in.
 
 ## Credits
 
-If you want to get mentioned in the [CREDITS](https://github.com/frncsdrk/avatar/blob/master/CREDITS) open a pull request
+If you want to get mentioned in the [CREDITS](https://github.com/frncsdrk/avatar/blob/main/CREDITS) open a pull request
 with the change or open an issue specifying the details.
