@@ -25,4 +25,4 @@ jobs:
           dockerfile: ./Dockerfile
           directory: ./
           username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
