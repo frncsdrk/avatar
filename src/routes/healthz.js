@@ -1,17 +1,17 @@
-const express = require('express')
+const express = require('express');
 
-const respond = require('../utils/respond')
+const respond = require('../utils/respond');
 
-const router = express.Router()
+const router = express.Router();
 
 router.get('/', (req, res, next) => {
   respond({
     data: {
-      msg: 'OK'
+      msg: 'OK',
     },
     next,
-    res
-  })
-})
+    res,
+  });
+});
 
-module.exports = router
+module.exports = router;
