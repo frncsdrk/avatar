@@ -3,26 +3,26 @@
  * @returns {string} shape type
  */
 const getRandomShapeType = () => {
-  const factor = Math.round(Math.random() * 2)
-  let type = '' // '' equals rect
+  const factor = Math.round(Math.random() * 2);
+  let type = ''; // '' equals rect
   switch (factor) {
     case 0:
-      type = ''
-      break
+      type = '';
+      break;
     case 1:
-      type = 'circle'
-      break
+      type = 'circle';
+      break;
     case 2:
-      type = 'triangle'
-      break
+      type = 'triangle';
+      break;
     default:
-      type = ''
-      break
+      type = '';
+      break;
   }
 
-  return type
-}
+  return type;
+};
 
 module.exports = {
-  getRandomShapeType
-}
+  getRandomShapeType,
+};

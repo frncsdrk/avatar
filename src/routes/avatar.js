@@ -1,32 +1,29 @@
-const express = require('express')
+const express = require('express');
 
-const respond = require('../utils/respond')
-const createAvatar = require('./../utils/avatar').createAvatar
-const random = require('./../utils/random')
+const respond = require('../utils/respond');
+const createAvatar = require('./../utils/avatar').createAvatar;
+const random = require('./../utils/random');
 
-const router = express.Router()
+const router = express.Router();
 
 router.get('/', (req, res, next) => {
-  createAvatar(
-    req.query,
-    (err, data) => {
-      respond({
-        contentType: data.contentType,
-        data: data.buffer,
-        err,
-        next,
-        res
-      })
-    }
-  )
-})
+  createAvatar(req.query, (err, data) => {
+    respond({
+      contentType: data.contentType,
+      data: data.buffer,
+      err,
+      next,
+      res,
+    });
+  });
+});
 
 router.post('/', (req, res, next) => {
   createAvatar(
     {
       body: req.body,
       verticallySymmetric: false,
-      ...req.query
+      ...req.query,
     },
     (err, data) => {
       respond({
@@ -34,11 +31,11 @@ router.post('/', (req, res, next) => {
         data: data.buffer,
         err,
         next,
-        res
-      })
+        res,
+      });
     }
-  )
-})
+  );
+});
 
 router.get('/random', (req, res, next) => {
   createAvatar(
@@ -46,9 +43,9 @@ router.get('/random', (req, res, next) => {
       width: 256,
       height: 256,
       elementWidth: 16,
-      color: '#' + (Math.random() * 0xFFFFFF << 0).toString(16),
+      color: '#' + ((Math.random() * 0xffffff) << 0).toString(16),
       type: random.getRandomShapeType(),
-      ...req.query
+      ...req.query,
     },
     (err, data) => {
       respond({
@@ -56,10 +53,10 @@ router.get('/random', (req, res, next) => {
         data: data.buffer,
         err,
         next,
-        res
-      })
+        res,
+      });
     }
-  )
-})
+  );
+});
 
-module.exports = router
+module.exports = router;
