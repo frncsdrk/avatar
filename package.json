@@ -25,14 +25,14 @@
     "canvas": "^2.9.0",
     "config": "^3.3.7",
     "cors": "^2.8.5",
-    "express": "^4.17.2"
+    "express": "^4.17.3"
   },
   "devDependencies": {
-    "eslint": "^8.9.0",
+    "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-promise": "^5.1.1",
     "eslint-plugin-standard": "^4.1.0",
     "nodemon": "^2.0.15"
   }
