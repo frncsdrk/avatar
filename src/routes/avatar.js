@@ -64,6 +64,7 @@ router.get('/initials', (req, res, next) => {
   createInitialsAvatar(
     {
       color: '#' + ((Math.random() * 0xffffff) << 0).toString(16),
+      type: 'center',
       ...req.query,
     },
     (err, data) => {
@@ -72,10 +73,10 @@ router.get('/initials', (req, res, next) => {
         data: data.buffer,
         err,
         next,
-        res
-      })
+        res,
+      });
     }
-  )
-})
+  );
+});
 
-module.exports = router
+module.exports = router;

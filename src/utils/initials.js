@@ -8,11 +8,19 @@ const draw = (context) => {
   const ctx = context.ctx;
   ctx.font = context.fontSize + 'px' + ' ' + context.fontFamily; // default: '30px Helvetica'
   ctx.rotate(context.rotation);
-  ctx.fillText(
-    context.letters,
-    context.WIDTH / 2 - context.fontSize * context.widthFactor / 2,
-    context.HEIGHT / 2 + context.fontSize * context.heightFactor / 2
-  );
+  if (context.type === 'custom') {
+    ctx.fillText(
+      context.letters,
+      context.positionX,
+      context.positionY
+    );
+  } else { // center
+    ctx.fillText(
+      context.letters,
+      context.WIDTH / 2 - context.fontSize * context.widthFactor / 2,
+      context.HEIGHT / 2 + context.fontSize * context.heightFactor / 2
+    );
+  }
 };
 
 const createInitialsAvatar = (conf, cb) => {
