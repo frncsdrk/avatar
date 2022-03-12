@@ -75,6 +75,25 @@ Parameters are overwritable as in `/avatar` request of type `GET`.
 
 **returns image of specified MIME type (default: image/png)**
 
+### /avatar/initials
+
+**Type:** `GET`
+
+Get a avatar made from specified letters
+
+**query**
+
+```
+{string} letters - The initials to be used for the avatar
+{string} type - Type of position calculation (default: 'center')
+{number} widthFactor - For correction of position on the X-axis (default: 1.3) (only relevant for type 'center')
+{number} heightFactor - For correction of position on the Y-axis (default: 0.8) (only relevant for type 'center')
+{number} positionX - Position on the X-axis (only relevant for type 'custom')
+{number} positionY - Position on the Y-axis (only relevant for type 'custom')
+```
+
+**returns image of specified MIME type (default: image/png)**
+
 ### /healthz
 
 **Type:** `GET`
@@ -121,4 +140,4 @@ See [CREDITS](https://github.com/frncsdrk/avatar/blob/main/CREDITS)
 
 ## License
 
-[MIT](https://github.com/frncsdrk/avatar/blob/main/LICENSE) (c) 2018 - 2021 frncsdrk and contributors
+[MIT](https://github.com/frncsdrk/avatar/blob/main/LICENSE) (c) 2018 - 2022 frncsdrk and contributors
