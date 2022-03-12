@@ -121,9 +121,17 @@ Get liveness of service
 
 ## Development
 
-### Prerequisites
+### Setup
 
-Run `brew install pkg-config cairo pango libpng jpeg giflib librsvg` or similar
+#### Prerequisites
+
+- Node.js
+- Libraries for image editing
+
+#### Steps
+
+- Run `brew install node` or similar to install Node.js
+- Run `brew install pkg-config cairo pango libpng jpeg giflib librsvg` or similar to install libraries
 
 ### Usage
 
