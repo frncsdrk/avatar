@@ -42,8 +42,8 @@ const createInitialsAvatar = (conf, cb) => {
 
   draw(context);
 
-  ctx.fill();
-  context.stroke && ctx.stroke();
+  // ctx.fill();
+  // context.stroke && ctx.stroke();
 
   const buffer = context.canvas.toBuffer(mimeType);
 

@@ -1,11 +1,12 @@
 {
   "name": "avatar",
   "version": "1.4.7",
-  "description": "microservice for creating random avatars",
+  "description": "Service for creating random avatars",
   "main": "src/app.js",
   "private": true,
   "scripts": {
     "dev": "nodemon bin/www",
+    "generate:docs": "apidoc -i src -o docs",
     "start": "node bin/www"
   },
   "repository": {
