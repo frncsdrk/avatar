@@ -49,6 +49,8 @@ const createContext = (conf) => {
   const rotation = conf.rotation || 0;
   const fontFamily = conf.fontFamily || 'Helvetica';
   const fontSize = conf.fontSize || '100';
+  const positionX = conf.positionX;
+  const positionY = conf.positionY;
   const widthFactor = conf.widthFactor || 1.3;
   const heightFactor = conf.heighFactor || 0.8;
   // /initials
@@ -70,13 +72,19 @@ const createContext = (conf) => {
     radius,
     verticallySymmetric,
     horizontallySymmetric,
+    // triangles
     direction,
+    // /triangles
+    // initials
     letters,
     rotation,
     fontFamily,
     fontSize,
+    positionX,
+    positionY,
     widthFactor,
     heightFactor,
+    // /initials
     stroke: conf.stroke,
     bgColor: conf.bgColor,
     elementsPerRow,
