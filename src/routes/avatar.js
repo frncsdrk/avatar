@@ -62,7 +62,10 @@ router.get('/random', (req, res, next) => {
 
 router.get('/initials', (req, res, next) => {
   createInitialsAvatar(
-    req.query,
+    {
+      color: '#' + ((Math.random() * 0xffffff) << 0).toString(16),
+      ...req.query,
+    },
     (err, data) => {
       respond({
         contentType: data.contentType,
