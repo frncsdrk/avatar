@@ -50,7 +50,7 @@ router.get('/', (req, res, next) => {
  *
  * @apiVersion 1.4.0
  *
- * @apiBody {text/plain} body avatar pattern, where every '#' is a shape
+ * @apiBody {text/plain} body Avatar pattern, where every '#' is a shape
  *
  * @apiQuery {Number} [width=256] Width in px
  * @apiQuery {Number} [height=256] Height in px
