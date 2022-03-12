@@ -36,5 +36,11 @@
     "eslint-plugin-promise": "^5.1.1",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1"
+  },
+  "engines": {
+    "node": ">= 16.0.0"
+  },
+  "volta": {
+    "node": "16.13.2"
   }
 }
