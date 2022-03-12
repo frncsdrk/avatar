@@ -7,14 +7,12 @@ const { parseConfig, createContext } = require('./config');
 const draw = (context) => {
   const ctx = context.ctx;
   ctx.font = context.fontSize + 'px' + ' ' + context.fontFamily; // default: '30px Helvetica'
-  // ctx.rotate(0.1)
-  console.log('width, fontSize:', context.WIDTH, context.fontSize);
+  ctx.rotate(context.rotation);
   ctx.fillText(
     context.letters,
-    context.WIDTH / 2 - context.fontSize * 1.3 / 2,
-    context.HEIGHT / 2 + context.fontSize * 0.8 / 2
+    context.WIDTH / 2 - context.fontSize * context.widthFactor / 2,
+    context.HEIGHT / 2 + context.fontSize * context.heightFactor / 2
   );
-  // ctx.fillText(context.letters, 50, 100)
 };
 
 const createInitialsAvatar = (conf, cb) => {

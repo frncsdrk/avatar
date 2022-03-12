@@ -41,11 +41,14 @@ const createContext = (conf) => {
   const horizontallySymmetric = conf.horizontallySymmetric || false
   // triangles
   const direction = conf.direction || 'top'
-  // /traingles
+  // /triangles
   // initials
   const letters = conf.letters || 'AA'
+  const rotation = conf.rotation || 0
   const fontFamily = conf.fontFamily || 'Helvetica'
   const fontSize = conf.fontSize || '100'
+  const widthFactor = conf.widthFactor || 1.3
+  const heightFactor = conf.heighFactor || 0.8
   // /initials
 
   const elementsPerRow = !verticallySymmetric ? WIDTH / elementWidth : WIDTH / elementWidth / 2
@@ -62,8 +65,11 @@ const createContext = (conf) => {
     horizontallySymmetric,
     direction,
     letters,
+    rotation,
     fontFamily,
     fontSize,
+    widthFactor,
+    heightFactor,
     stroke: conf.stroke,
     bgColor: conf.bgColor,
     elementsPerRow,
