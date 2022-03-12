@@ -125,13 +125,15 @@ Get liveness of service
 
 #### Prerequisites
 
-- Node.js
+- Node.js installation
 - Libraries for image editing
+- apiDoc installation, if editing docs
 
 #### Steps
 
 - Run `brew install node` or similar to install Node.js
 - Run `brew install pkg-config cairo pango libpng jpeg giflib librsvg` or similar to install libraries
+- Run `npm install -g apidoc` to install apiDoc globally
 
 ### Usage
 
