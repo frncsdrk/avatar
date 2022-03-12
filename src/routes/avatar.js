@@ -1,7 +1,8 @@
 const express = require('express');
 
 const respond = require('../utils/respond');
-const createAvatar = require('./../utils/avatar').createAvatar;
+const { createAvatar } = require('./../utils/avatar');
+const { createInitialsAvatar } = require('./../utils/initials');
 const random = require('./../utils/random');
 
 const router = express.Router();
@@ -45,6 +46,25 @@ router.get('/random', (req, res, next) => {
       elementWidth: 16,
       color: '#' + ((Math.random() * 0xffffff) << 0).toString(16),
       type: random.getRandomShapeType(),
+      ...req.query,
+    },
+    (err, data) => {
+      respond({
+        contentType: data.contentType,
+        data: data.buffer,
+        err,
+        next,
+        res,
+      });
+    }
+  );
+});
+
+router.get('/initials', (req, res, next) => {
+  createInitialsAvatar(
+    {
+      color: '#' + ((Math.random() * 0xffffff) << 0).toString(16),
+      type: 'center',
       ...req.query,
     },
     (err, data) => {
