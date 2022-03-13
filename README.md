@@ -7,6 +7,13 @@ Self-hosted service for creating random avatars
 
 Inspired by github default avatars
 
+## Examples
+
+![random squares](./img/random-0.png "squares")
+![random circles](./img/random-1.png "circles")
+![random triangles](./img/random-2.png "triangles")
+![initials AV](./img/initials-0.png "initials")
+
 ## Usage
 
 Default **Port**: `9000`
