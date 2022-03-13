@@ -9,9 +9,14 @@ Inspired by github default avatars
 
 ## Examples
 
+### Random
+
 ![random squares](./img/random-0.png "squares")
 ![random circles](./img/random-1.png "circles")
 ![random triangles](./img/random-2.png "triangles")
+
+### Intials
+
 ![initials AV](./img/initials-0.png "initials")
 
 ## Usage
