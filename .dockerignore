@@ -1,6 +1,14 @@
+.github/
+docs/
+img/
 .editorconfig
 .eslintignore
 .eslintrc.js
 .gitignore
+.node-version
+.nvmrc
+.prettierignore
+.prettierrc.js
+apidoc.json
 CONTRIBUTING.md
 docker-compose.yml
