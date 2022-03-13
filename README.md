@@ -3,7 +3,7 @@
 [![Build Status](https://github.com/frncsdrk/avatar/workflows/build/badge.svg?branch=main&event=push)](https://github.com/frncsdrk/avatar/actions)
 [![pages-build-deployment](https://github.com/frncsdrk/avatar/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/frncsdrk/avatar/actions/workflows/pages/pages-build-deployment)
 
-Service for creating random avatars
+Self-hosted service for creating random avatars
 
 Inspired by github default avatars
 
