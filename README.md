@@ -15,7 +15,7 @@ Inspired by github default avatars
 ![random circles](./img/random-1.png "circles")
 ![random triangles](./img/random-2.png "triangles")
 
-### Intials
+### Initials
 
 ![initials AV](./img/initials-0.png "initials")
 
