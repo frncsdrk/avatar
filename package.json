@@ -23,20 +23,20 @@
   },
   "homepage": "https://github.com/frncsdrk/avatar#readme",
   "dependencies": {
-    "canvas": "^2.9.0",
+    "canvas": "^2.9.1",
     "config": "^3.3.7",
     "cors": "^2.8.5",
     "express": "^4.17.3"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-promise": "^5.1.1",
     "nodemon": "^2.0.15",
-    "prettier": "^2.5.1"
+    "prettier": "^2.6.0"
   },
   "engines": {
     "node": ">= 16.0.0"
