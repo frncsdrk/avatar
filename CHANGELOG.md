@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.3 (2022-03-29)
+
+### chore
+
+* Update thirdparty dependencies ([cd1f4c](https://github.com/frncsdrk/tiny-changelog/commit/cd1f4c44805ef63c4728ac2dd7f0310cf2e35e74))
+
 ## 1.5.2 (2022-03-24)
 
 ### uncategorized
@@ -241,7 +247,7 @@
 
 ## 1.0.0 (2019-09-01)
 
-## 0.1.5, 1.0.0-rc2 (2019-09-01)
+## 1.0.0-rc2,0.1.5 (2019-09-01)
 
 ### uncategorized
 
@@ -254,7 +260,7 @@
 
 * Update thirdparty dependecies ([ff012a](https://github.com/frncsdrk/tiny-changelog/commit/ff012a58b7bd8ae0746f95f99862cf4ed3846d46))
 
-## 0.1.3, 1.0.0-rc1 (2019-07-20)
+## 1.0.0-rc1,0.1.3 (2019-07-20)
 
 ### uncategorized
 
