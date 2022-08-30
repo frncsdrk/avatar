@@ -2,5 +2,5 @@
 #
 # Publish docs
 
-git subtree push --prefix docs origin gh-pages
+git subtree push --prefix docs gh gh-pages
 printf '%s\n' "PUBLISHED"
