@@ -1,9 +1,9 @@
-const express = require('express');
+import express from 'express';
 
-const respond = require('../utils/respond');
-const { createAvatar } = require('./../utils/avatar');
-const { createInitialsAvatar } = require('./../utils/initials');
-const random = require('./../utils/random');
+import { respond } from '../utils/respond';
+import { AvatarResultMap, createAvatar } from '../utils/avatar';
+import { createInitialsAvatar } from '../utils/initials';
+import { getRandomShapeType } from '../utils/random';
 
 const router = express.Router();
 
@@ -32,7 +32,7 @@ const router = express.Router();
  *     Image
  */
 router.get('/', (req, res, next) => {
-  createAvatar(req.query, (err, data) => {
+  createAvatar({ ...req.query }, (err: Error, data: AvatarResultMap) => {
     respond({
       contentType: data.contentType,
       data: data.buffer,
@@ -76,7 +76,7 @@ router.post('/', (req, res, next) => {
       verticallySymmetric: false,
       ...req.query,
     },
-    (err, data) => {
+    (err: Error, data: AvatarResultMap) => {
       respond({
         contentType: data.contentType,
         data: data.buffer,
@@ -119,10 +119,10 @@ router.get('/random', (req, res, next) => {
       height: 256,
       elementWidth: 16,
       color: '#' + ((Math.random() * 0xffffff) << 0).toString(16),
-      type: random.getRandomShapeType(),
+      type: getRandomShapeType(),
       ...req.query,
     },
-    (err, data) => {
+    (err: Error, data: AvatarResultMap) => {
       respond({
         contentType: data.contentType,
         data: data.buffer,
@@ -159,7 +159,7 @@ router.get('/initials', (req, res, next) => {
       type: 'center',
       ...req.query,
     },
-    (err, data) => {
+    (err: Error, data: AvatarResultMap) => {
       respond({
         contentType: data.contentType,
         data: data.buffer,
@@ -171,4 +171,4 @@ router.get('/initials', (req, res, next) => {
   );
 });
 
-module.exports = router;
+export default router;

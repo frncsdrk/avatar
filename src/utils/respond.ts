@@ -1,8 +1,18 @@
+import express from 'express';
+
+interface IResponseConfig {
+  contentType?: string
+  data: Object
+  err?: Error
+  next: Function
+  res: express.Response
+  status?: number
+}
 /**
  * Response helper
  * @param {object} conf - config
  */
-const respond = (conf) => {
+export function respond(conf: IResponseConfig) {
   if (typeof conf !== 'object') {
     return false;
   }
@@ -32,5 +42,3 @@ const respond = (conf) => {
 
   return next();
 };
-
-module.exports = respond;

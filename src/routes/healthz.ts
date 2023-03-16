@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 
-const respond = require('../utils/respond');
+import { respond } from '../utils/respond';
 
 const router = express.Router();
 
@@ -29,4 +29,4 @@ router.get('/', (req, res, next) => {
   });
 });
 
-module.exports = router;
+export default router;

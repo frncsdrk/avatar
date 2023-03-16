@@ -2,7 +2,7 @@
  * Select random shape type
  * @returns {string} shape type
  */
-const getRandomShapeType = () => {
+const getRandomShapeType = (): string => {
   const factor = Math.round(Math.random() * 2);
   let type = ''; // '' equals rect
   switch (factor) {
@@ -23,6 +23,6 @@ const getRandomShapeType = () => {
   return type;
 };
 
-module.exports = {
+export {
   getRandomShapeType,
 };

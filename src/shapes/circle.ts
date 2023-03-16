@@ -1,3 +1,5 @@
+import { IContextConfig } from "../utils/config";
+
 /**
  * Draw arc shape
  * @param {object} ctx - canvas context
@@ -8,7 +10,7 @@
  * @param {number} endingAngle
  * @param {boolean} stroke - flag
  */
-const drawRaw = (ctx, x, y, radius, startingAngle, endingAngle, stroke) => {
+const drawRaw = (ctx: CanvasRenderingContext2D, x: number, y: number, radius: number, startingAngle: number, endingAngle: number, stroke: boolean) => {
   ctx.beginPath();
   ctx.arc(x, y, radius, startingAngle, endingAngle);
   ctx.fill();
@@ -19,16 +21,16 @@ const drawRaw = (ctx, x, y, radius, startingAngle, endingAngle, stroke) => {
  * Draw circle
  * @param {object} context
  */
-const draw = (context) => {
+const draw = (context: IContextConfig) => {
   const elementWidth = context.elementWidth;
   drawRaw(
     context.ctx,
-    context.positionX * elementWidth + context.radius,
-    context.positionY * elementWidth + context.radius,
+    context.positionX! * elementWidth! + context.radius,
+    context.positionY! * elementWidth! + context.radius,
     context.radius,
     0,
     2 * Math.PI,
-    context.stroke
+    context.stroke!
   );
 };
 
@@ -36,18 +38,18 @@ const draw = (context) => {
  * Mirror drawn circle shape vertically
  * @param {object} context
  */
-const drawVerticallySymmetric = (context) => {
+const drawVerticallySymmetric = (context: IContextConfig) => {
   const elementWidth = context.elementWidth;
   const radius = context.radius;
   drawRaw(
     context.ctx,
-    (context.elementsPerRow * 2 - context.positionX - 1) * elementWidth +
+    (context.elementsPerRow * 2 - context.positionX! - 1) * elementWidth! +
       radius,
-    context.positionY * elementWidth + radius,
+    context.positionY! * elementWidth! + radius,
     radius,
     0,
     2 * Math.PI,
-    context.stroke
+    context.stroke!
   );
 };
 
@@ -55,22 +57,22 @@ const drawVerticallySymmetric = (context) => {
  * Mirror drawn circle shape horizontally
  * @param {object} context
  */
-const drawHorizontallySymmetric = (context) => {
+const drawHorizontallySymmetric = (context: IContextConfig) => {
   const elementWidth = context.elementWidth;
   const radius = context.radius;
   drawRaw(
     context.ctx,
-    context.positionX * elementWidth + radius,
-    (context.elementsPerCol * 2 - context.positionY - 1) * elementWidth +
+    context.positionX! * elementWidth! + radius,
+    (context.elementsPerCol * 2 - context.positionY! - 1) * elementWidth! +
       radius,
     radius,
     0,
     2 * Math.PI,
-    context.stroke
+    context.stroke!
   );
 };
 
-module.exports = {
+export {
   draw,
   drawVerticallySymmetric,
   drawHorizontallySymmetric,

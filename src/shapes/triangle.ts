@@ -1,3 +1,5 @@
+import { IContextConfig } from "../utils/config";
+
 /**
  * Draw top facing triangle
  * @param {object} ctx - canvas context
@@ -7,7 +9,7 @@
  * @param {number} height
  * @param {boolean} stroke - flag
  */
-const drawRawTop = (ctx, x, y, width, height, stroke) => {
+const drawRawTop = (ctx: CanvasRenderingContext2D, x: number, y: number, width: number, height: number, stroke: boolean) => {
   ctx.beginPath();
   ctx.moveTo(x + width / 2, y);
   ctx.lineTo(x + width, y + height);
@@ -26,7 +28,7 @@ const drawRawTop = (ctx, x, y, width, height, stroke) => {
  * @param {number} height
  * @param {boolean} stroke - flag
  */
-const drawRawBottom = (ctx, x, y, width, height, stroke) => {
+const drawRawBottom = (ctx: CanvasRenderingContext2D, x: number, y: number, width: number, height: number, stroke: number) => {
   ctx.beginPath();
   ctx.moveTo(x + width / 2, y + height);
   ctx.lineTo(x + width, y);
@@ -45,7 +47,7 @@ const drawRawBottom = (ctx, x, y, width, height, stroke) => {
  * @param {number} height
  * @param {boolean} stroke - flag
  */
-const drawRawLeft = (ctx, x, y, width, height, stroke) => {
+const drawRawLeft = (ctx: CanvasRenderingContext2D, x: number, y: number, width: number, height: number, stroke: number) => {
   ctx.beginPath();
   ctx.moveTo(x, y + height / 2);
   ctx.lineTo(x + width, y + height);
@@ -64,7 +66,7 @@ const drawRawLeft = (ctx, x, y, width, height, stroke) => {
  * @param {number} height
  * @param {boolean} stroke - flag
  */
-const drawRawRight = (ctx, x, y, width, height, stroke) => {
+const drawRawRight = (ctx: CanvasRenderingContext2D, x: number, y: number, width: number, height: number, stroke: number) => {
   ctx.beginPath();
   ctx.moveTo(x + width, y + height / 2);
   ctx.lineTo(x, y + height);
@@ -78,9 +80,9 @@ const drawRawRight = (ctx, x, y, width, height, stroke) => {
  * Draw triangle facing specified direction
  * @param {object} context
  */
-const draw = (context) => {
+const draw = (context: IContextConfig) => {
   const elementWidth = context.elementWidth;
-  let drawMethod = () => {};
+  let drawMethod!: Function;
   switch (context.direction) {
     case 'top':
       drawMethod = drawRawTop;
@@ -98,8 +100,8 @@ const draw = (context) => {
 
   drawMethod(
     context.ctx,
-    context.positionX * elementWidth,
-    context.positionY * elementWidth,
+    context.positionX! * elementWidth!,
+    context.positionY! * elementWidth!,
     elementWidth,
     elementWidth,
     context.stroke
@@ -110,9 +112,9 @@ const draw = (context) => {
  * Mirror triangle facing specified direction vertically
  * @param {object} context
  */
-const drawVerticallySymmetric = (context) => {
+const drawVerticallySymmetric = (context: IContextConfig) => {
   const elementWidth = context.elementWidth;
-  let drawMethod = () => {};
+  let drawMethod!: Function;
   switch (context.direction) {
     case 'top':
       drawMethod = drawRawTop;
@@ -130,8 +132,8 @@ const drawVerticallySymmetric = (context) => {
 
   drawMethod(
     context.ctx,
-    (context.elementsPerRow * 2 - context.positionX - 1) * elementWidth,
-    context.positionY * elementWidth,
+    (context.elementsPerRow * 2 - context.positionX! - 1) * elementWidth!,
+    context.positionY! * elementWidth!,
     elementWidth,
     elementWidth,
     context.stroke
@@ -142,9 +144,9 @@ const drawVerticallySymmetric = (context) => {
  * Mirror facing triangle facing specified direction horizontally
  * @param {object} context
  */
-const drawHorizontallySymmetric = (context) => {
+const drawHorizontallySymmetric = (context: IContextConfig) => {
   const elementWidth = context.elementWidth;
-  let drawMethod = () => {};
+  let drawMethod!: Function;
   switch (context.direction) {
     case 'top':
       drawMethod = drawRawTop;
@@ -162,15 +164,15 @@ const drawHorizontallySymmetric = (context) => {
 
   drawMethod(
     context.ctx,
-    context.positionX * elementWidth,
-    (context.elementsPerCol * 2 - context.positionY - 1) * elementWidth,
+    context.positionX! * elementWidth!,
+    (context.elementsPerCol * 2 - context.positionY! - 1) * elementWidth!,
     elementWidth,
     elementWidth,
     context.stroke
   );
 };
 
-module.exports = {
+export {
   draw,
   drawVerticallySymmetric,
   drawHorizontallySymmetric,

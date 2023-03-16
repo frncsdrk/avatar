@@ -1,17 +1,47 @@
-const { createCanvas } = require('canvas');
+import { createCanvas, CanvasRenderingContext2D } from 'canvas';
 
-const shapes = {
-  circle: require('../shapes/circle'),
-  rect: require('../shapes/rect'),
-  triangle: require('../shapes/triangle'),
+import { IContextConfig } from './config';
+import * as circle from '../shapes/circle';
+import * as rect from '../shapes/rect';
+import * as triangle from '../shapes/triangle';
+export type AvatarResultMap = {
+  [key: string]: any
+  contentType: string
+  buffer: Buffer
+}
+type ShapeMap = {
+  [key: string]: any
+}
+const shapes: ShapeMap = {
+  circle,
+  rect,
+  triangle,
 };
+
+// export interface ICanvasContext {
+//   canvas: Canvas,
+//   ctx: CanvasRenderingContext2D,
+//   WIDTH: number,
+//   HEIGHT: number,
+//   elementWidth: number,
+//   radius: number,
+//   verticallySymmetric: boolean,
+//   horizontallySymmetric: boolean,
+//   direction: string,
+//   stroke: boolean,
+//   bgColor: string | undefined,
+//   elementsPerRow: number,
+//   elementsPerCol: number,
+//   type: string | undefined,
+//   body: string,
+// }
 
 /**
  * Parse config values
  * @param {object} conf - config
  * @returns {object} config
  */
-const parseConfig = (conf) => {
+const parseConfig = (conf: IContextConfig) => {
   const intKeys = ['width', 'height', 'elementWidth'];
   for (let i = 0; i < intKeys.length; i++) {
     if (conf[intKeys[i]]) {
@@ -33,7 +63,7 @@ const parseConfig = (conf) => {
  * @param {string} type - shape type
  * @param {object} context
  */
-const drawShape = (type, context) => {
+const drawShape = (type: string, context: IContextConfig) => {
   const shape = shapes[type];
   shape.draw(context);
   if (context.verticallySymmetric) {
@@ -50,11 +80,11 @@ const drawShape = (type, context) => {
  * @param {object} conf - config
  * @returns {object} context
  */
-const createContext = (conf) => {
+const createContext = (conf: IContextConfig): IContextConfig => {
   const canvas = createCanvas(conf.width || 256, conf.height || 256);
   const ctx = canvas.getContext('2d');
-  const WIDTH = conf.width || 256;
-  const HEIGHT = conf.height || 256;
+  const width = conf.width || 256;
+  const height = conf.height || 256;
   const elementWidth = conf.elementWidth || 16;
   const radius = elementWidth / 2;
   const verticallySymmetric = !(
@@ -66,18 +96,18 @@ const createContext = (conf) => {
   // /traingles
 
   const elementsPerRow = !verticallySymmetric
-    ? WIDTH / elementWidth
-    : WIDTH / elementWidth / 2;
+    ? width / elementWidth
+    : width / elementWidth / 2;
   const elementsPerCol =
     horizontallySymmetric && !verticallySymmetric
-      ? HEIGHT / elementWidth / 2
-      : HEIGHT / elementWidth;
+      ? height / elementWidth / 2
+      : height / elementWidth;
 
   return {
     canvas,
     ctx,
-    WIDTH,
-    HEIGHT,
+    width,
+    height,
     elementWidth,
     radius,
     verticallySymmetric,
@@ -96,8 +126,8 @@ const createContext = (conf) => {
  * Draw avatar specified in request body
  * @param {object} context
  */
-const drawSpecified = (context) => {
-  const lines = context.body.split('\n');
+const drawSpecified = (context: IContextConfig) => {
+  const lines = context.body!.split('\n');
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     for (let j = 0; j < line.length; j++) {
@@ -114,7 +144,7 @@ const drawSpecified = (context) => {
  * Draw random avatar
  * @param {object} context
  */
-const drawRandom = (context) => {
+const drawRandom = (context: IContextConfig) => {
   for (let i = 0; i < context.elementsPerCol; i++) {
     for (let j = 0; j < context.elementsPerRow; j++) {
       if (Math.random() > 0.5) {
@@ -131,17 +161,17 @@ const drawRandom = (context) => {
  * @param {object} conf - config
  * @param {function} cb - callback
  */
-const createAvatar = (conf, cb) => {
+export function createAvatar(conf: IContextConfig, cb: Function) {
   conf = parseConfig(conf);
 
   const context = createContext(conf);
-  const ctx = context.ctx;
-  const mimeType = conf.mimeType || 'image/png';
+  const ctx: CanvasRenderingContext2D = context.ctx;
+  const mimeType: string = conf.mimeType || 'image/png';
 
   if (context.bgColor) {
     ctx.beginPath();
-    ctx.fillStyle = conf.bgColor;
-    ctx.fillRect(0, 0, context.WIDTH, context.HEIGHT);
+    ctx.fillStyle = conf.bgColor!;
+    ctx.fillRect(0, 0, context.width!, context.height!);
   }
 
   // NOTE: Need to change colors after bg is drawn
@@ -158,13 +188,10 @@ const createAvatar = (conf, cb) => {
   context.stroke && ctx.stroke();
 
   const buffer = context.canvas.toBuffer(mimeType);
-
-  return cb(null, {
+  const result:AvatarResultMap = {
     contentType: mimeType,
-    buffer,
-  });
-};
+    buffer
+  }
 
-module.exports = {
-  createAvatar,
+  return cb(null, result);
 };

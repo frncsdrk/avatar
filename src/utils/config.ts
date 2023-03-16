@@ -1,11 +1,35 @@
-const { createCanvas } = require('canvas');
+import { Canvas, createCanvas } from 'canvas';
+
+interface IContextConfig {
+  [key: string]: any
+  canvas?: Canvas,
+  ctx?: CanvasRenderingContext2D
+  width?: number,
+  height?: number,
+  elementWidth?: number,
+  verticallySymmetric?: boolean,
+  horizontallySymmetric?: boolean,
+  stroke?: boolean,
+  direction?: string,
+  letters?: string,
+  rotation?: number,
+  fontFamily?: string,
+  fontSize?: number,
+  positionX?: number,
+  positionY?: number,
+  widthFactor?: number,
+  heighFactor?: number,
+  bgColor?: string,
+  type?: string,
+  body?: string
+}
 
 /**
  * Parse config values
  * @param {object} conf - config
  * @returns {object} config
  */
-const parseConfig = (conf) => {
+const parseConfig = (conf: IContextConfig) => {
   // Ensure the values of the following keys are numbers
   const intKeys = ['width', 'height', 'elementWidth'];
   for (let i = 0; i < intKeys.length; i++) {
@@ -30,11 +54,11 @@ const parseConfig = (conf) => {
  * @param {object} conf - config
  * @returns {object} context
  */
-const createContext = (conf) => {
+const createContext = (conf: IContextConfig) => {
   const canvas = createCanvas(conf.width || 256, conf.height || 256);
   const ctx = canvas.getContext('2d');
-  const WIDTH = conf.width || 256;
-  const HEIGHT = conf.height || 256;
+  const width = conf.width || 256;
+  const height = conf.height || 256;
   const elementWidth = conf.elementWidth || 16;
   const radius = elementWidth / 2;
   const verticallySymmetric = !(
@@ -48,7 +72,7 @@ const createContext = (conf) => {
   const letters = conf.letters || 'AA';
   const rotation = conf.rotation || 0;
   const fontFamily = conf.fontFamily || 'Helvetica';
-  const fontSize = conf.fontSize || '100';
+  const fontSize = conf.fontSize || 100;
   const positionX = conf.positionX;
   const positionY = conf.positionY;
   const widthFactor = conf.widthFactor || 1.3;
@@ -56,18 +80,18 @@ const createContext = (conf) => {
   // /initials
 
   const elementsPerRow = !verticallySymmetric
-    ? WIDTH / elementWidth
-    : WIDTH / elementWidth / 2;
+    ? width / elementWidth
+    : width / elementWidth / 2;
   const elementsPerCol =
     horizontallySymmetric && !verticallySymmetric
-      ? HEIGHT / elementWidth / 2
-      : HEIGHT / elementWidth;
+      ? height / elementWidth / 2
+      : height / elementWidth;
 
   return {
     canvas,
     ctx,
-    WIDTH,
-    HEIGHT,
+    width,
+    height,
     elementWidth,
     radius,
     verticallySymmetric,
@@ -94,7 +118,8 @@ const createContext = (conf) => {
   };
 };
 
-module.exports = {
+export {
+  IContextConfig,
   parseConfig,
   createContext,
 };
