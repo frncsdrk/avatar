@@ -8,7 +8,7 @@ jobs:
   push:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: frncsdrk/avatar
