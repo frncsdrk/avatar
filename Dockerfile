@@ -1,8 +1,8 @@
-FROM randomgoods/node-image-libs:lts-slim
+FROM docker.io/randomgoods/node-image-libs:lts-slim
 
 ADD . /app
 WORKDIR /app
-RUN npm i --only=prod
+RUN npm i --omit=dev
 
 EXPOSE 9000
 
