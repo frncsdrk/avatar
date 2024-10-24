@@ -17,11 +17,11 @@ jobs:
         run: |
           echo $RELEASE_VERSION
           echo ${{ env.RELEASE_VERSION }}
-      - uses: mr-smithers-excellent/docker-build-push@v5
+      - uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: frncsdrk/avatar
           registry: docker.io
-          tags: ${{ env.RELEASE_VERSION }}
+          tags: ${{ env.RELEASE_VERSION }}, stable
           dockerfile: ./Dockerfile
           directory: ./
           username: ${{ secrets.DOCKER_USERNAME }}
