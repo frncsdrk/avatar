@@ -32,6 +32,24 @@ Then follow the steps under [Development Setup](https://github.com/frncsdrk/avat
 
 There is a container image available on [Docker Hub](https://hub.docker.com/r/frncsdrk/avatar)
 and there is a Docker-Compose file in the repo.
+Both are provided for convenience and as a starting point for a production setup.
+
+```
+docker|podman run -p 9000:9000/tcp docker.io/frncsdrk/avatar
+```
+
+### Configuration
+
+You can put config files into `./config/`. See [file load order](https://github.com/node-config/node-config/wiki/Configuration-Files#file-load-order) for configuration names and there load priority.
+
+**Mount configuration into container**
+
+Using another name than `prod.yml` will lead to a warning when using the container image from this repository.
+The warning is irrelevant as long as you follow the configuration naming conventions.
+
+```
+docker|podman run -p <custom port>:<custom port>/tcp -v ./vol:/app/config docker.io/frncsdrk/avatar
+```
 
 ## API
 
