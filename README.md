@@ -40,9 +40,11 @@ docker|podman run -p 9000:9000/tcp docker.io/frncsdrk/avatar
 
 ### Configuration
 
-You can put config files into `./config/`. See [file load order](https://github.com/node-config/node-config/wiki/Configuration-Files#file-load-order) for configuration names and there load priority.
+You can put config files into `./config/`. See [file load order](https://github.com/node-config/node-config/wiki/Configuration-Files#file-load-order) for configuration names and there priority.
 
 **Mount configuration into container**
+
+*Generally mounting a custom configuration shouldn't be necessary, except if you want to set a custom port*
 
 Using another name than `prod.yml` will lead to a warning when using the container image from this repository.
 The warning is irrelevant as long as you follow the configuration naming conventions.

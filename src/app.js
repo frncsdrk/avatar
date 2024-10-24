@@ -6,6 +6,9 @@ const avatar = require('./routes/avatar');
 const healthz = require('./routes/healthz');
 const status = require('./routes/status');
 
+/**
+  * Get port from config or use fallback
+  */
 const getPort = () => {
   return config.has('service.server.port') ? config.get('service.server.port') : 9000;
 };
