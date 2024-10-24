@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon bin/www",
     "generate:docs": "apidoc -i src -o docs",
-    "start": "node bin/www"
+    "start": "NODE_ENV=prod node bin/www"
   },
   "repository": {
     "type": "git",
