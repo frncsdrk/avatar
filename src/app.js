@@ -6,6 +6,10 @@ const avatar = require('./routes/avatar');
 const healthz = require('./routes/healthz');
 const status = require('./routes/status');
 
+const getPort = () => {
+  return config.has('service.server.port') ? config.get('service.server.port') : 9000;
+};
+
 /**
  * Start the app
  */
@@ -21,8 +25,8 @@ const start = () => {
   app.use('/healthz', healthz);
   app.use('/status', status);
 
-  const server = app.listen(config.get('service.server.port'), () => {
-    console.log('app is running on', server.address().port);
+  const server = app.listen(getPort(), () => {
+    console.log('app is running on', getPort());
   });
 };
 
