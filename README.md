@@ -57,6 +57,11 @@ docker|podman run -p <custom port>:<custom port>/tcp -v ./vol:/app/config docker
 
 See [API Docs](https://frncsdrk.github.io/avatar)
 
+## Logs
+
+The service logs in `./log` into a combined log with all messages and an error log.
+Additionally, if the service is not running in production mode all messages get logged to the console.
+
 ## Development
 
 ### Setup

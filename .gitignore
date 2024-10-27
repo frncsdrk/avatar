@@ -2,7 +2,9 @@
 .idea
 node_modules
 dist
+log
 out
 vol
 
 config/local*
+*audit.json

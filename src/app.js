@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const config = require('config');
 
+const logger = require('./logger');
+
 const avatar = require('./routes/avatar');
 const healthz = require('./routes/healthz');
 const status = require('./routes/status');
@@ -29,7 +31,8 @@ const start = () => {
   app.use('/status', status);
 
   const server = app.listen(getPort(), () => {
-    console.log('app is running on', getPort());
+    logger.info('app is running on %s', getPort());
+    // console.log('app is running on', getPort());
   });
 };
 
