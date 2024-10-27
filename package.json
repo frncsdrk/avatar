@@ -27,7 +27,9 @@
     "config": "^3.3.12",
     "cors": "^2.8.5",
     "express": "^4.21.0",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "winston": "^3.15.0",
+    "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
     "eslint": "^7.32.0",

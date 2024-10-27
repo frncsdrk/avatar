@@ -1,3 +1,5 @@
+const logger = require('../logger')
+
 /**
  * Response helper
  * @param {object} conf - config
@@ -19,6 +21,8 @@ const respond = (conf) => {
   }
 
   if (err) {
+    logger.error(err.message);
+
     res.set('Content-Type', 'application/json');
     res.status(status || 400);
     res.send({
