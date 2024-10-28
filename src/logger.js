@@ -1,16 +1,21 @@
+const config = require('config');
 const winston = require('winston');
 const { createLogger, format, transports } = require('winston');
 require('winston-daily-rotate-file');
 
+const getLogDirectory = () => {
+  return config.has('service.log.path') ? config.get('service.log.path') : './log';
+};
+
 const fileRotateCombinedTransport = new winston.transports.DailyRotateFile({
-  filename: 'log/combined-%DATE%.log',
+  filename: `${ getLogDirectory() }/combined-%DATE%.log`,
   datePattern: 'YYYY-MM-DD',
   maxFiles: '14d',
   zippedArchive: true,
 });
 const fileRotateErrorTransport = new winston.transports.DailyRotateFile({
   level: 'error',
-  filename: 'log/error-%DATE%.log',
+  filename: `${ getLogDirectory() }/error-%DATE%.log`,
   datePattern: 'YYYY-MM-DD',
   maxFiles: '14d',
   zippedArchive: true,

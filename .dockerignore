@@ -1,6 +1,7 @@
 .github/
 docs/
 img/
+log/
 .editorconfig
 .eslintignore
 .eslintrc.js
