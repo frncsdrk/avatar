@@ -2,10 +2,14 @@ FROM docker.io/randomgoods/node-image-libs:lts-slim
 
 ADD . /app
 
-# Create a application user
+# Create application user
 RUN groupadd -g 1001 avatar && \
     useradd -m -u 1001 -g avatar avatar && \
     chown -R avatar:avatar /app
+
+# Create log directory
+RUN mkdir -p /var/log/avatar && \
+    chown -R avatar:avatar /var/log/avatar
 
 USER avatar
 

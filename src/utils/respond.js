@@ -21,7 +21,7 @@ const respond = (conf) => {
   }
 
   if (err) {
-    logger.error(err.message);
+    logger.error(err);
 
     res.set('Content-Type', 'application/json');
     res.status(status || 400);

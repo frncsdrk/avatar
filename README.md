@@ -59,7 +59,8 @@ See [API Docs](https://frncsdrk.github.io/avatar)
 
 ## Logs
 
-The service logs in `./log` into a combined log with all messages and an error log.
+The service uses a preconfigured log directory and logs into a combined log with all messages and an error log.
+For the development environment the default directory is `./log` and for production it is `/var/log/avatar`.
 Additionally, if the service is not running in production mode all messages get logged to the console.
 
 ## Development
