@@ -1,7 +1,6 @@
 # avatar
 
 [![build](https://github.com/frncsdrk/avatar/actions/workflows/build.yml/badge.svg)](https://github.com/frncsdrk/avatar/actions/workflows/build.yml)
-[![pages-build-deployment](https://github.com/frncsdrk/avatar/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/frncsdrk/avatar/actions/workflows/pages/pages-build-deployment)
 
 Self-hosted service for creating random avatars
 
