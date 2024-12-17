@@ -26,10 +26,10 @@
     "canvas": "^2.11.2",
     "config": "^3.3.12",
     "cors": "^2.8.5",
-    "express": "^4.21.0",
+    "express": "^4.21.2",
     "js-yaml": "^4.1.0",
     "response-time": "^2.3.3",
-    "winston": "^3.15.0",
+    "winston": "^3.17.0",
     "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
@@ -39,11 +39,11 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-promise": "^5.1.1",
-    "nodemon": "^3.1.7",
+    "nodemon": "^3.1.9",
     "prettier": "^2.8.8"
   },
   "engines": {
-    "node": ">= 18.0.0"
+    "node": ">= 18.0.0 <21.0.0"
   },
   "volta": {
     "node": "20.14.0"
