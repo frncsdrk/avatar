@@ -1,4 +1,4 @@
-FROM docker.io/randomgoods/node-image-libs:lts-slim
+FROM docker.io/randomgoods/node-image-libs:legacy-slim
 
 ADD . /app
 
