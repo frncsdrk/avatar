@@ -94,4 +94,4 @@ See [CREDITS](https://github.com/frncsdrk/avatar/blob/main/CREDITS)
 
 ## License
 
-[MIT](https://github.com/frncsdrk/avatar/blob/main/LICENSE) (c) 2018 - 2024 frncsdrk and contributors
+[MIT](https://github.com/frncsdrk/avatar/blob/main/LICENSE) (c) 2018 - 2025 frncsdrk and contributors
