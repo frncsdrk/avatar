@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/frncsdrk/avatar#readme",
   "dependencies": {
-    "canvas": "^3.1.0",
+    "canvas": "^3.1.2",
     "config": "^3.3.12",
     "cors": "^2.8.5",
     "express": "^4.21.2",
@@ -33,14 +33,14 @@
     "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
-    "eslint": "^9.22.0",
-    "eslint-config-prettier": "^10.1.1",
-    "eslint-plugin-import": "^2.31.0",
+    "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-promise": "^7.2.1",
-    "nodemon": "^3.1.9",
-    "prettier": "^3.5.3"
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2"
   },
   "engines": {
     "node": ">= 18.0.0 <23.0.0"
