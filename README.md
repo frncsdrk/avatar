@@ -60,7 +60,7 @@ See [API Docs](https://frncsdrk.github.io/avatar)
 
 The service uses a preconfigured log directory and logs into a combined log with all messages and an error log.
 For the development environment the default directory is `./log` and for production it is `/var/log/avatar`.
-Additionally, if the service is not running in production mode all messages get logged to the console.
+Additionally, if the service is not running in production mode all messages get logged to stdout.
 
 ## Development
 
@@ -70,7 +70,7 @@ Additionally, if the service is not running in production mode all messages get 
 
 - Node.js installation
 - Libraries for image editing
-- apiDoc installation, if editing docs
+- [apiDoc](https://www.npmjs.com/package/apidoc) installation, if editing docs
 
 #### Steps
 
