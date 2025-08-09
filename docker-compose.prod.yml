@@ -1,16 +1,11 @@
-version: "3"
-
 services:
-  avatar_nodejs:
-    build: .
-    image: frncsdrk/avatar:latest
-    container_name: avatar_nodejs
+  avatar:
+    image: frncsdrk/avatar:stable
     restart: unless-stopped
     ports:
       - "9000:9000"
     networks:
-      - avatar
+      avatar:
 
 networks:
   avatar:
-    driver: bridge
