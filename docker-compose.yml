@@ -1,16 +1,12 @@
-version: "3"
+networks:
+  avatar:
 
 services:
-  avatar_nodejs:
+  avatar:
     build: .
-    image: avatar_nodejs:dev
-    container_name: avatar_nodejs_dev
+    image: avatar:dev
     restart: unless-stopped
     ports:
       - "127.0.0.1:9000:9000"
     networks:
-      - avatar
-
-networks:
-  avatar:
-    driver: bridge
+      avatar:
