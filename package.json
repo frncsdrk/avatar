@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frncsdrk/avatar.git"
+    "url": "git+https://codeberg.org/frncsdrk/avatar.git"
   },
   "keywords": [
     "avatar"
@@ -19,9 +19,9 @@
   "author": "frncsdrk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/frncsdrk/avatar/issues"
+    "url": "https://codeberg.org/frncsdrk/avatar/issues"
   },
-  "homepage": "https://github.com/frncsdrk/avatar#readme",
+  "homepage": "https://codeberg.org/frncsdrk/avatar#readme",
   "dependencies": {
     "canvas": "^3.2.0",
     "config": "^4.1.1",
