@@ -1,7 +1,5 @@
 # avatar
 
-[![build](https://github.com/frncsdrk/avatar/actions/workflows/build.yml/badge.svg)](https://github.com/frncsdrk/avatar/actions/workflows/build.yml)
-
 Self-hosted service for creating random avatars
 
 Inspired by github default avatars
@@ -24,8 +22,8 @@ Default **Port**: `9000`
 
 ### Download
 
-Either download a release from the [Releases page](https://github.com/frncsdrk/avatar/tags) or clone the repo.
-Then follow the steps under [Development Setup](https://github.com/frncsdrk/avatar#setup).
+Either download a release from the [Tags page](https://codeberg.org/frncsdrk/avatar/tags) or clone the repo.
+Then follow the steps under [Development Setup](#setup).
 
 ### Docker
 
@@ -86,12 +84,12 @@ Additionally, if the service is not running in production mode all messages get 
 
 ## Contributions
 
-See [CONTRIBUTING](https://github.com/frncsdrk/avatar/blob/main/CONTRIBUTING.md)
+See [CONTRIBUTING](./CONTRIBUTING.md)
 
 ## Credits
 
-See [CREDITS](https://github.com/frncsdrk/avatar/blob/main/CREDITS)
+See [CREDITS](./CREDITS)
 
 ## License
 
-[MIT](https://github.com/frncsdrk/avatar/blob/main/LICENSE) (c) 2018 - 2025 frncsdrk and contributors
+[MIT](./LICENSE) (c) 2018 - 2025 frncsdrk and contributors
