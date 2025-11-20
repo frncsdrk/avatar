@@ -27,25 +27,22 @@
     "config": "^4.1.1",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "js-yaml": "^4.1.0",
+    "js-yaml": "^4.1.1",
     "response-time": "^2.3.4",
     "winston": "^3.18.3",
     "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
-    "eslint": "^9.37.0",
+    "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-promise": "^7.2.1",
-    "nodemon": "^3.1.10",
+    "nodemon": "^3.1.11",
     "prettier": "^3.6.2"
   },
   "engines": {
-    "node": ">= 18.0.0 <23.0.0"
-  },
-  "volta": {
-    "node": "20.14.0"
+    "node": ">= 18.0.0 <25.0.0"
   }
 }
