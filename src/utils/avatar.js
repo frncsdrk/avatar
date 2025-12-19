@@ -110,6 +110,7 @@ const drawSpecified = (context) => {
   }
 };
 
+// TODO: Mix shapes, recurring order or random
 /**
  * Draw random avatar
  * @param {object} context
