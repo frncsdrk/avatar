@@ -24,7 +24,7 @@
   "homepage": "https://codeberg.org/frncsdrk/avatar#readme",
   "dependencies": {
     "canvas": "^3.2.1",
-    "config": "^4.3.0",
+    "config": "^4.4.1",
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "js-yaml": "^4.1.1",
@@ -39,7 +39,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-promise": "^7.2.1",
-    "nodemon": "^3.1.11",
+    "nodemon": "^3.1.14",
     "prettier": "^3.8.1"
   },
   "engines": {
