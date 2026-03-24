@@ -1,6 +1,6 @@
 {
   "name": "avatar",
-  "version": "1.6.13",
+  "version": "1.6.14",
   "description": "Self-hosted service for creating random avatars",
   "main": "src/app.js",
   "private": true,
