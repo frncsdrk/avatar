@@ -23,7 +23,7 @@
   },
   "homepage": "https://codeberg.org/frncsdrk/avatar#readme",
   "dependencies": {
-    "canvas": "^3.2.1",
+    "canvas": "^3.2.2",
     "config": "^4.4.1",
     "cors": "^2.8.6",
     "express": "^5.2.1",
@@ -33,7 +33,7 @@
     "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
-    "eslint": "^9.39.1",
+    "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-node": "^11.1.0",
