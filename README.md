@@ -92,4 +92,4 @@ See [CREDITS](./CREDITS)
 
 ## License
 
-[MIT](./LICENSE) (c) 2018 - 2025 frncsdrk and contributors
+[MIT](./LICENSE) (c) 2018 - 2026 frncsdrk and contributors
