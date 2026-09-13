@@ -24,10 +24,10 @@
   "homepage": "https://codeberg.org/frncsdrk/avatar#readme",
   "dependencies": {
     "canvas": "^3.2.3",
-    "config": "^4.4.2",
+    "config": "^5.0.1",
     "cors": "^2.8.6",
     "express": "^5.2.1",
-    "js-yaml": "^5.2.2",
+    "js-yaml": "^5.4.2",
     "response-time": "^2.3.4",
     "winston": "^3.19.0",
     "winston-daily-rotate-file": "^5.0.0"
